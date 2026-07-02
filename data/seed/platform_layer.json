@@ -1,5 +1,5 @@
 {
-  "_comment": "平台层数据 (schema v2): 内存控制器上限按平台统一管理 (Intel ARK, 以基础款CPU为准); 端口清单来源标 $apple_spec 时由采集脚本替换为该机型已验证的 Apple 规格页 URL; GPU 驱动支持按架构世代管理 (Dortania)。",
+  "_comment": "平台层数据 (schema v2): 内存控制器上限按平台统一管理 (Intel ARK, 以平台内最高内存规格的CPU选项为准); 端口清单来源标 $apple_spec 时由采集脚本替换为该机型已验证的 Apple 规格页 URL; GPU 驱动支持按架构世代管理 (Dortania)。",
   "platforms": [
     {
       "name": "Arrandale",
@@ -10,18 +10,20 @@
       "models": [
         "MacBookPro6,2"
       ],
-      "notes": null
+      "notes": null,
+      "max_module_gb": 4
     },
     {
       "name": "Nehalem/Westmere-EP (LGA1366)",
       "cpu_microarch": "Nehalem (Bloomfield) / Westmere-EP",
       "memory_controller": "CPU 集成, 三通道 DDR3-1066/1333 ECC",
-      "controller_max_ram_gb": 24,
+      "controller_max_ram_gb": 288,
       "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=W3530",
       "models": [
         "MacPro5,1"
       ],
-      "notes": "24GB 为基础款 W3530 (Bloomfield) 的 ARK 值; Westmere-EP 选配 (X5650 等) 控制器上限高得多 (ARK 288GB/颗), 双路机型社区实测 128GB, 见证据层"
+      "notes": "控制器上限按平台内最高内存规格 CPU 计 (Westmere-EP X56xx, ARK 288GB/颗); 基础款 W3530 (Bloomfield) 仅 24GB; 单条: 16GB RDIMM 通用, 32GB 仅 X56xx (FAQ 帖实测最高 5×32=160GB, 10.10+); 单路 W36xx 最高 56GB 且不支持大容量组合",
+      "max_module_gb": 16
     },
     {
       "name": "Sandy Bridge 桌面 (LGA1155)",
@@ -33,7 +35,8 @@
         "iMac12,2",
         "iMac12,1"
       ],
-      "notes": "官方 16GB vs 控制器 32GB — 社区 32GB 实测与控制器上限吻合"
+      "notes": "官方 16GB vs 控制器 32GB — 社区 32GB 实测与控制器上限吻合",
+      "max_module_gb": 8
     },
     {
       "name": "Ivy Bridge 移动",
@@ -46,7 +49,8 @@
         "MacBookPro9,2",
         "MacBookPro10,1"
       ],
-      "notes": "官方 8/16GB vs 控制器 32GB"
+      "notes": "DDR3 世代单条现实最大 8GB; 16GB DDR3 SO-DIMM 到 Broadwell/Skylake 世代才现实存在",
+      "max_module_gb": 8
     },
     {
       "name": "Ivy Bridge 桌面 (LGA1155)",
@@ -57,7 +61,8 @@
       "models": [
         "iMac13,2"
       ],
-      "notes": null
+      "notes": null,
+      "max_module_gb": 8
     },
     {
       "name": "Ivy Bridge-EP (LGA2011)",
@@ -68,7 +73,8 @@
       "models": [
         "MacPro6,1"
       ],
-      "notes": "官方 64GB vs 控制器 256GB; 社区 128GB (4×32GB RDIMM) 有实测报告"
+      "notes": "官方 64GB vs 控制器 256GB; 社区 128GB (4×32GB RDIMM) 有实测报告",
+      "max_module_gb": 32
     },
     {
       "name": "Haswell-ULT (LPDDR3)",
@@ -91,7 +97,7 @@
       "models": [
         "MacBookPro11,1"
       ],
-      "notes": "内存焊接"
+      "notes": "内存焊接, 控制器上限只对出厂配置有意义"
     },
     {
       "name": "Crystal Well (Haswell-H)",
@@ -103,7 +109,7 @@
         "MacBookPro11,4",
         "MacBookPro11,5"
       ],
-      "notes": "内存焊接"
+      "notes": "内存焊接, 控制器上限只对出厂配置有意义"
     },
     {
       "name": "Haswell 桌面 (LGA1150)",
@@ -114,7 +120,8 @@
       "models": [
         "iMac14,2"
       ],
-      "notes": null
+      "notes": null,
+      "max_module_gb": 8
     },
     {
       "name": "Broadwell-U",
@@ -126,7 +133,7 @@
         "MacBookPro12,1",
         "MacBookAir7,2"
       ],
-      "notes": "内存焊接"
+      "notes": "内存焊接, 控制器上限只对出厂配置有意义"
     },
     {
       "name": "Skylake 低压移动 (U 系)",
@@ -137,7 +144,7 @@
       "models": [
         "MacBookPro13,1"
       ],
-      "notes": "内存焊接"
+      "notes": "内存焊接, 控制器上限只对出厂配置有意义"
     },
     {
       "name": "Skylake-S (LGA1151)",
@@ -148,7 +155,8 @@
       "models": [
         "iMac17,1"
       ],
-      "notes": "官方 32GB vs 控制器 64GB — 社区 64GB (4×16GB) 有多例实测"
+      "notes": "官方 32GB vs 控制器 64GB — 社区 64GB (4×16GB) 有多例实测",
+      "max_module_gb": 16
     },
     {
       "name": "Kaby Lake 桌面 (LGA1151)",
@@ -159,7 +167,8 @@
       "models": [
         "iMac18,3"
       ],
-      "notes": null
+      "notes": null,
+      "max_module_gb": 16
     },
     {
       "name": "Coffee Lake 桌面 (BGA 封装, B 后缀 SKU)",
@@ -170,7 +179,8 @@
       "models": [
         "Macmini8,1"
       ],
-      "notes": null
+      "notes": null,
+      "max_module_gb": 32
     },
     {
       "name": "Coffee Lake-S (LGA1151v2)",
@@ -181,7 +191,8 @@
       "models": [
         "iMac19,1"
       ],
-      "notes": "官方 64GB vs 控制器 128GB — 社区 128GB (4×32GB) 有实测"
+      "notes": "官方 64GB vs 控制器 128GB — 社区 128GB (4×32GB) 有实测",
+      "max_module_gb": 32
     },
     {
       "name": "Comet Lake-S (LGA1200)",
@@ -192,7 +203,8 @@
       "models": [
         "iMac20,1"
       ],
-      "notes": null
+      "notes": null,
+      "max_module_gb": 32
     },
     {
       "name": "Ivy Bridge 低压移动 (ULV)",
@@ -203,7 +215,7 @@
       "models": [
         "MacBookAir5,2"
       ],
-      "notes": "内存焊接"
+      "notes": "内存焊接, 控制器上限只对出厂配置有意义"
     },
     {
       "name": "Kaby Lake 低压移动 (U 系)",
@@ -214,18 +226,19 @@
       "models": [
         "MacBookPro14,1"
       ],
-      "notes": "内存焊接"
+      "notes": "内存焊接, 控制器上限只对出厂配置有意义"
     },
     {
       "name": "Cascade Lake-W (LGA3647)",
       "cpu_microarch": "Cascade Lake-W",
       "memory_controller": "CPU 集成, 六通道 DDR4-2933 ECC",
-      "controller_max_ram_gb": 1024,
+      "controller_max_ram_gb": 2048,
       "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=W-3223",
       "models": [
         "MacPro7,1"
       ],
-      "notes": "1TB 为基础款 W-3223 的 ARK 值; 24/28 核 M 后缀型号支持 2TB, Apple 官方顶配 1.5TB"
+      "notes": "控制器上限按 M 后缀 SKU 计 (W-3265M/3275M, 2TB/颗); 非 M 后缀 (W-3223/3235/3245) 为 1TB/颗; 整机 12 槽 ×128GB = 1.5TB 即 Apple 官方顶配",
+      "max_module_gb": 128
     }
   ],
   "expansion_ports": [
@@ -456,7 +469,7 @@
         },
         {
           "port_type": "apple_ssd_blade",
-          "spec": "Apple 专有 PCIe x4 刀片槽",
+          "spec": "Apple 专有 PCIe x4 AHCI 刀片槽",
           "count": 1,
           "source_url": "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide",
           "notes": null
@@ -916,14 +929,19 @@
       "arch": "Kepler",
       "example_cards": "GTX 660/680/770, Quadro K2100M/K4100M (MXM)",
       "macos_native": "10.7 – 11 (Big Sur)",
-      "macos_patched": "12 – 14 需 OCLP 根补丁",
+      "macos_patched": "12–15 (OCLP 根补丁, 文档现覆盖至 Sequoia)",
       "notes": "2011 iMac MXM 升级首选架构, 因驱动寿命最长; Monterey 起原生驱动被移除",
       "source_url": "https://dortania.github.io/GPU-Buyers-Guide/",
       "extra_source_urls": [
         "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
       ],
       "corroboration_count": 2,
-      "metal_support": "支持 — OCLP 上新系统的门槛线, 可换显卡机器的关键指标"
+      "metal_support": "支持 — OCLP 上新系统的门槛线, 可换显卡机器的关键指标",
+      "perf_rank": 1,
+      "entry_cards": "GT 710/730 (GK208 版, Metal 门槛卡)",
+      "flagship_cards": "GTX 780 Ti / GTX Titan Black",
+      "mxm_available": 1,
+      "path_class": "standard"
     },
     {
       "vendor": "NVIDIA",
@@ -935,7 +953,12 @@
       "source_url": "https://dortania.github.io/GPU-Buyers-Guide/",
       "extra_source_urls": [],
       "corroboration_count": 1,
-      "metal_support": "支持, 但驱动止步 10.13, 新系统无意义"
+      "metal_support": "支持, 但驱动止步 10.13, 新系统无意义",
+      "perf_rank": 5,
+      "entry_cards": "GTX 950 / GTX 1050",
+      "flagship_cards": "Titan Xp / Titan X (Pascal) / GTX 1080 Ti",
+      "mxm_available": 0,
+      "path_class": "standard"
     },
     {
       "vendor": "NVIDIA",
@@ -947,7 +970,12 @@
       "source_url": "https://dortania.github.io/GPU-Buyers-Guide/",
       "extra_source_urls": [],
       "corroboration_count": 1,
-      "metal_support": "不适用 (macOS 无驱动)"
+      "metal_support": "不适用 (macOS 无驱动)",
+      "perf_rank": 0,
+      "entry_cards": null,
+      "flagship_cards": null,
+      "mxm_available": 0,
+      "path_class": "standard"
     },
     {
       "vendor": "AMD",
@@ -961,7 +989,12 @@
         "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
       ],
       "corroboration_count": 2,
-      "metal_support": "支持"
+      "metal_support": "支持",
+      "perf_rank": 2,
+      "entry_cards": "R7 250 / HD 7850",
+      "flagship_cards": "R9 390X",
+      "mxm_available": 1,
+      "path_class": "standard"
     },
     {
       "vendor": "AMD",
@@ -973,7 +1006,12 @@
       "source_url": "https://dortania.github.io/GPU-Buyers-Guide/",
       "extra_source_urls": [],
       "corroboration_count": 1,
-      "metal_support": "支持"
+      "metal_support": "支持",
+      "perf_rank": 3,
+      "entry_cards": "RX 560",
+      "flagship_cards": "RX 580 8GB",
+      "mxm_available": 0,
+      "path_class": "standard"
     },
     {
       "vendor": "AMD",
@@ -985,7 +1023,12 @@
       "source_url": "https://dortania.github.io/GPU-Buyers-Guide/",
       "extra_source_urls": [],
       "corroboration_count": 1,
-      "metal_support": "支持"
+      "metal_support": "支持",
+      "perf_rank": 4,
+      "entry_cards": "Vega 56",
+      "flagship_cards": "Radeon VII",
+      "mxm_available": 0,
+      "path_class": "standard"
     },
     {
       "vendor": "AMD",
@@ -997,7 +1040,12 @@
       "source_url": "https://dortania.github.io/GPU-Buyers-Guide/",
       "extra_source_urls": [],
       "corroboration_count": 1,
-      "metal_support": "支持"
+      "metal_support": "支持",
+      "perf_rank": 6,
+      "entry_cards": "RX 5500 XT",
+      "flagship_cards": "RX 5700 XT",
+      "mxm_available": 0,
+      "path_class": "standard"
     },
     {
       "vendor": "AMD",
@@ -1009,7 +1057,31 @@
       "source_url": "https://dortania.github.io/GPU-Buyers-Guide/",
       "extra_source_urls": [],
       "corroboration_count": 1,
-      "metal_support": "支持 (Metal 3)"
+      "metal_support": "支持 (Metal 3)",
+      "perf_rank": 7,
+      "entry_cards": "RX 6600",
+      "flagship_cards": "RX 6900 XT (6x50 系需 12.4+)",
+      "mxm_available": 0,
+      "path_class": "standard"
+    },
+    {
+      "vendor": "NVIDIA",
+      "arch": "Volta (Titan V)",
+      "example_cards": "Titan V",
+      "macos_native": "仅 10.13 (Web Driver 387.10.10.15.15.108)",
+      "macos_patched": null,
+      "notes": "NVIDIA 唯一一版 Volta Web 驱动, 发布后不久被撤回, 稳定性差; 装机需自行留存驱动包 — 真野路子",
+      "source_url": "https://egpu.io/forums/mac-setup/nvidia-titans-which-will-work-in-macosx/",
+      "extra_source_urls": [
+        "https://www.insanelymac.com/forum/topic/339828-nvidia-driver-titan-v-for-mac-os-high-sierra-17g65/"
+      ],
+      "corroboration_count": 2,
+      "metal_support": "支持, 但驱动为撤回版且不稳定",
+      "perf_rank": 8,
+      "entry_cards": null,
+      "flagship_cards": "Titan V",
+      "mxm_available": 0,
+      "path_class": "unorthodox"
     }
   ],
   "components": [
@@ -1041,6 +1113,151 @@
       "result": "works_with_caveats",
       "max_working_capacity_gb": null,
       "notes": "同代 Sandy Bridge 微码在固件白名单内, 基本即插即用; 但睡眠失效 (所有 Xeon 型号), TDP 80W 高于原厂 i7-2600S; 性能超过顶配 i7-2600"
+    }
+  ],
+  "macos_versions": [
+    {
+      "version": "10.11",
+      "name": "El Capitan",
+      "release_year": 2015,
+      "metal_required": 0,
+      "oclp_supported": 0,
+      "notes": "Metal API 引入但不强制",
+      "source_url": "https://en.wikipedia.org/wiki/MacOS_version_history",
+      "extra_source_urls": [
+        "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
+      ],
+      "corroboration_count": 2
+    },
+    {
+      "version": "10.12",
+      "name": "Sierra",
+      "release_year": 2016,
+      "metal_required": 0,
+      "oclp_supported": 0,
+      "notes": null,
+      "source_url": "https://en.wikipedia.org/wiki/MacOS_version_history",
+      "extra_source_urls": [
+        "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
+      ],
+      "corroboration_count": 2
+    },
+    {
+      "version": "10.13",
+      "name": "High Sierra",
+      "release_year": 2017,
+      "metal_required": 0,
+      "oclp_supported": 0,
+      "notes": "NVIDIA Web Driver 的最后一站 (Maxwell/Pascal 可用的最高版本)",
+      "source_url": "https://en.wikipedia.org/wiki/MacOS_version_history",
+      "extra_source_urls": [
+        "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
+      ],
+      "corroboration_count": 2
+    },
+    {
+      "version": "10.14",
+      "name": "Mojave",
+      "release_year": 2018,
+      "metal_required": 1,
+      "oclp_supported": 0,
+      "notes": "第一个强制要求 Metal GPU 的版本; 老机升级走 dosdude 补丁而非 OCLP",
+      "source_url": "https://en.wikipedia.org/wiki/MacOS_version_history",
+      "extra_source_urls": [
+        "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
+      ],
+      "corroboration_count": 2
+    },
+    {
+      "version": "10.15",
+      "name": "Catalina",
+      "release_year": 2019,
+      "metal_required": 1,
+      "oclp_supported": 0,
+      "notes": "老机升级走 dosdude 补丁",
+      "source_url": "https://en.wikipedia.org/wiki/MacOS_version_history",
+      "extra_source_urls": [
+        "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
+      ],
+      "corroboration_count": 2
+    },
+    {
+      "version": "11",
+      "name": "Big Sur",
+      "release_year": 2020,
+      "metal_required": 1,
+      "oclp_supported": 1,
+      "notes": "OCLP 支持起点",
+      "source_url": "https://en.wikipedia.org/wiki/MacOS_version_history",
+      "extra_source_urls": [
+        "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
+      ],
+      "corroboration_count": 2
+    },
+    {
+      "version": "12",
+      "name": "Monterey",
+      "release_year": 2021,
+      "metal_required": 1,
+      "oclp_supported": 1,
+      "notes": "Kepler 原生驱动被移除, OCLP 可补",
+      "source_url": "https://en.wikipedia.org/wiki/MacOS_version_history",
+      "extra_source_urls": [
+        "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
+      ],
+      "corroboration_count": 2
+    },
+    {
+      "version": "13",
+      "name": "Ventura",
+      "release_year": 2022,
+      "metal_required": 1,
+      "oclp_supported": 1,
+      "notes": "AMD GCN 1–3 原生驱动被移除, OCLP 可补",
+      "source_url": "https://en.wikipedia.org/wiki/MacOS_version_history",
+      "extra_source_urls": [
+        "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
+      ],
+      "corroboration_count": 2
+    },
+    {
+      "version": "14",
+      "name": "Sonoma",
+      "release_year": 2023,
+      "metal_required": 1,
+      "oclp_supported": 1,
+      "notes": null,
+      "source_url": "https://en.wikipedia.org/wiki/MacOS_version_history",
+      "extra_source_urls": [
+        "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
+      ],
+      "corroboration_count": 2
+    },
+    {
+      "version": "15",
+      "name": "Sequoia",
+      "release_year": 2024,
+      "metal_required": 1,
+      "oclp_supported": 1,
+      "notes": null,
+      "source_url": "https://en.wikipedia.org/wiki/MacOS_version_history",
+      "extra_source_urls": [
+        "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
+      ],
+      "corroboration_count": 2
+    },
+    {
+      "version": "26",
+      "name": "Tahoe",
+      "release_year": 2025,
+      "metal_required": 1,
+      "oclp_supported": 0,
+      "notes": "x86 末代; OCLP 对 Tahoe 的支持截至录入时仍在推进, 见 OCLP 文档",
+      "source_url": "https://en.wikipedia.org/wiki/MacOS_version_history",
+      "extra_source_urls": [
+        "https://dortania.github.io/OpenCore-Legacy-Patcher/MODELS.html"
+      ],
+      "corroboration_count": 2
     }
   ]
 }

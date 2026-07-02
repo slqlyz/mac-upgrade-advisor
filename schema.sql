@@ -68,7 +68,8 @@ CREATE TABLE IF NOT EXISTS platforms (
     name                  TEXT NOT NULL UNIQUE,   -- 'Sandy Bridge 桌面'
     cpu_microarch         TEXT NOT NULL,
     memory_controller     TEXT NOT NULL,          -- 'CPU 集成, 双通道 DDR3-1333'
-    controller_max_ram_gb INTEGER,                -- 控制器理论上限
+    controller_max_ram_gb INTEGER,                -- 控制器上限 (ARK, 假设插满当代最大模组)
+    max_module_gb         INTEGER,                -- 该世代单条最大容量; 物理可达 = min(控制器, 槽数×单条)
     controller_source_url TEXT,                   -- Intel ARK
     notes                 TEXT
 );
@@ -132,6 +133,24 @@ CREATE TABLE IF NOT EXISTS gpu_arch_support (
     extra_source_urls TEXT,
     corroboration_count INTEGER NOT NULL DEFAULT 1,
     UNIQUE (vendor, arch)
+);
+
+-- ============================================================
+-- 1g. macos_versions — macOS 版本 × 配置要求 (与 gpu_arch_support 双向呼应)
+--     metal_required: 10.14 Mojave 起强制 Metal GPU;
+--     oclp_supported: OCLP 可把老机带上的版本 (黑苹果续命的目标候选)。
+-- ============================================================
+CREATE TABLE IF NOT EXISTS macos_versions (
+    id                INTEGER PRIMARY KEY,
+    version           TEXT NOT NULL UNIQUE,   -- '10.13' / '12' / '26'
+    name              TEXT NOT NULL,          -- 'High Sierra' / 'Monterey' / 'Tahoe'
+    release_year      INTEGER,
+    metal_required    INTEGER NOT NULL DEFAULT 0,
+    oclp_supported    INTEGER NOT NULL DEFAULT 0,
+    notes             TEXT,
+    source_url        TEXT NOT NULL,
+    extra_source_urls TEXT,
+    corroboration_count INTEGER NOT NULL DEFAULT 1
 );
 
 -- ============================================================

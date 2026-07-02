@@ -79,16 +79,18 @@ def main():
     for p in seed["platforms"]:
         conn.execute(
             """INSERT INTO platforms (name, cpu_microarch, memory_controller,
-                   controller_max_ram_gb, controller_source_url, notes)
-               VALUES (?,?,?,?,?,?)
+                   controller_max_ram_gb, max_module_gb, controller_source_url, notes)
+               VALUES (?,?,?,?,?,?,?)
                ON CONFLICT(name) DO UPDATE SET
                    cpu_microarch=excluded.cpu_microarch,
                    memory_controller=excluded.memory_controller,
                    controller_max_ram_gb=excluded.controller_max_ram_gb,
+                   max_module_gb=excluded.max_module_gb,
                    controller_source_url=excluded.controller_source_url,
                    notes=excluded.notes""",
             (p["name"], p["cpu_microarch"], p["memory_controller"],
-             p["controller_max_ram_gb"], p["controller_source_url"], p.get("notes")),
+             p["controller_max_ram_gb"], p.get("max_module_gb"),
+             p["controller_source_url"], p.get("notes")),
         )
         pid = conn.execute("SELECT id FROM platforms WHERE name=?", (p["name"],)).fetchone()[0]
         for ident in p["models"]:
@@ -145,8 +147,8 @@ def main():
         conn.execute(
             """INSERT INTO gpu_arch_support (vendor, arch, example_cards, macos_native,
                    macos_patched, notes, source_url, extra_source_urls, corroboration_count,
-                   metal_support)
-               VALUES (?,?,?,?,?,?,?,?,?,?)
+                   metal_support, perf_rank, entry_cards, flagship_cards, mxm_available)
+               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
                ON CONFLICT(vendor, arch) DO UPDATE SET
                    example_cards=excluded.example_cards,
                    macos_native=excluded.macos_native,
@@ -155,12 +157,35 @@ def main():
                    source_url=excluded.source_url,
                    extra_source_urls=excluded.extra_source_urls,
                    corroboration_count=excluded.corroboration_count,
-                   metal_support=excluded.metal_support""",
+                   metal_support=excluded.metal_support,
+                   perf_rank=excluded.perf_rank,
+                   entry_cards=excluded.entry_cards,
+                   flagship_cards=excluded.flagship_cards,
+                   mxm_available=excluded.mxm_available""",
             (g["vendor"], g["arch"], g.get("example_cards"), g["macos_native"],
              g.get("macos_patched"), g.get("notes"), g["source_url"],
              json.dumps(g.get("extra_source_urls") or [], ensure_ascii=False),
-             g["corroboration_count"], g.get("metal_support")))
+             g["corroboration_count"], g.get("metal_support"), g.get("perf_rank"),
+             g.get("entry_cards"), g.get("flagship_cards"), g.get("mxm_available", 0)))
         print(f"  {g['vendor']:7s} {g['arch']:20s} 原生 {g['macos_native']}")
+
+    # 4b. macos_versions
+    if seed.get("macos_versions"):
+        print("\nmacOS 版本表:")
+        for v in seed["macos_versions"]:
+            conn.execute(
+                """INSERT INTO macos_versions (version, name, release_year, metal_required,
+                       oclp_supported, notes, source_url, extra_source_urls, corroboration_count)
+                   VALUES (?,?,?,?,?,?,?,?,?)
+                   ON CONFLICT(version) DO UPDATE SET name=excluded.name,
+                       metal_required=excluded.metal_required,
+                       oclp_supported=excluded.oclp_supported, notes=excluded.notes,
+                       source_url=excluded.source_url""",
+                (v["version"], v["name"], v.get("release_year"), v["metal_required"],
+                 v["oclp_supported"], v.get("notes"), v["source_url"],
+                 json.dumps(v.get("extra_source_urls") or [], ensure_ascii=False),
+                 v.get("corroboration_count", 1)))
+            print(f"  macOS {v['version']:6s} {v['name']:12s} Metal强制={v['metal_required']} OCLP={v['oclp_supported']}")
 
     # 5. CPU 换装等实证 (复用 compatibility)
     print("\n实证记录:")

@@ -380,13 +380,14 @@
       "source_url": "https://everymac.com/systems/apple/mac_pro/specs/mac-pro-twelve-core-2.66-mid-2010-westmere-specs.html",
       "source_type": "everymac",
       "extra_source_urls": [
-        "https://forums.macrumors.com/threads/mac-pro-5-1-2012-cpu-upgrade-to-2-x5690.2094980/"
+        "https://forums.macrumors.com/threads/mac-pro-5-1-2012-cpu-upgrade-to-2-x5690.2094980/",
+        "https://forums.macrumors.com/threads/cmp-nmp-macpro-4-1-5-1-memory-upgrade-compatibility-and-faq.2099103/"
       ],
-      "corroboration_count": 2,
+      "corroboration_count": 3,
       "verified_macos_versions": "10.9+",
       "result": "works",
       "max_working_capacity_gb": 128,
-      "notes": "双路 8×16GB=128GB, 需 OS X 10.9+ (EveryMac 实测); 单路机型上限更低; 官方仅标 64GB (双路)"
+      "notes": "双路 8×16GB=128GB 稳定组合 (10.9+); FAQ 帖: 双路 X56xx 在 10.10+ 可用 5×32GB=160GB; 单路 W36xx 最高 56GB 且不支持 64GB+ 组合; 256GB (8×32) 未见确认案例"
     },
     {
       "model_identifier": "MacPro6,1",

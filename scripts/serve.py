@@ -116,12 +116,18 @@ def api_model_detail(identifier):
             "SELECT * FROM gpu_arch_support ORDER BY vendor, arch")
         for r in gpu_archs:
             r["extra_source_urls"] = json.loads(r.get("extra_source_urls") or "[]")
-    wild_available = (any((r.get("path_class") or "standard") == "unorthodox" for r in compat)
-                      or any("TB1/2" in p for p in gpu_paths))
+    wild_available = advisor.wild_extras(
+        {"compat": compat, "model": m, "ports": ports, "gpu_archs": gpu_archs})
+    flex_ok = advisor.flex_available(m)
+    versions = query_db("SELECT * FROM macos_versions ORDER BY id")
+    oclp_target_opts = [{"version": v["version"], "name": v["name"]}
+                        for v in advisor.oclp_targets(m, versions)]
     return {"model": m, "compatibility": layers, "conflicts": conflicts,
             "cpu_options": cpu_options, "platform": platform, "ports": ports,
             "constraints": constraints, "gpu_archs": gpu_archs, "gpu_paths": gpu_paths,
-            "wild_available": wild_available}
+            "wild_available": wild_available,
+            "oclp_applicable": advisor.oclp_applicable(m) and len(oclp_target_opts) > 0,
+            "flex_available": flex_ok, "oclp_targets": oclp_target_opts}
 
 
 PAGE = """<!DOCTYPE html>
@@ -221,7 +227,7 @@ PAGE = """<!DOCTYPE html>
 <script>
 const LAYER_LABEL = { official: "官方支持", community_tested: "社区验证 (≥2 独立来源)",
                       experimental: "实验性 (孤例, 风险自担)", derived: "理论推导 (无实证)" };
-const USAGE_OPTS = ["轻度日用", "黑苹果续命", "Windows双系统", "秀肌肉", "野路子"];
+const USAGE_OPTS = ["轻度日用", "黑苹果续命", "秀肌肉", "野路子"];
 const RISK_OPTS = [["official", "仅官方支持"], ["community", "接受社区验证"],
                    ["experimental", "接受实验性 + 理论推导"]];
 const RESULT_LABEL = { works: "可用", works_with_caveats: "可用但有注意事项",
@@ -302,9 +308,21 @@ async function showModel(id) {
         m.cpu_socket ? (m.cpu_socket.indexOf("BGA") === 0
           ? ' · <span style="color:var(--experimental)">常规不可升级</span>'
           : ' · <span style="color:var(--official)">插槽式, 可物理换装</span>') : ""}</div></div>
-      <div><div class="k">内存 (官方上限 / 控制器理论上限)</div><div class="v">${m.official_max_ram_gb}GB / ${d.platform && d.platform.controller_max_ram_gb ? d.platform.controller_max_ram_gb + "GB" : "?"} · ${esc(m.ram_type || "")} · 插槽 ×${m.ram_slots}</div></div>
+      <div><div class="k">内存 (官方上限 / 物理可达)</div><div class="v">${m.official_max_ram_gb}GB / ${(() => {
+        const p = d.platform;
+        if (!p || !p.controller_max_ram_gb || !m.ram_slots) return "—";
+        const phys = p.max_module_gb ? Math.min(p.controller_max_ram_gb, m.ram_slots * p.max_module_gb) : p.controller_max_ram_gb;
+        const vary = phys < m.official_max_ram_gb ? " ⚠随 CPU SKU 而异, 见平台备注" : "";
+        return `${phys}GB${p.max_module_gb ? ` (${m.ram_slots}槽×单条${p.max_module_gb}GB, 控制器 ${p.controller_max_ram_gb}GB${vary})` : ""}`;
+      })()} · ${esc(m.ram_type || "")} · 插槽 ×${m.ram_slots}${
+        m.ram_slots > 0
+          ? ' · <span style="color:var(--official)">插槽式, 可自行升级</span>'
+          : ' · <span style="color:var(--experimental)">焊接, 常规不可升级</span>'}</div></div>
       ${d.platform ? `<div><div class="k">平台 (内存控制器)</div><div class="v">${esc(d.platform.name)} · ${esc(d.platform.memory_controller)}</div></div>` : ""}
       <div><div class="k">存储接口</div><div class="v">${esc(m.storage_interface)}</div></div>
+      ${m.stock_gpu ? `<div><div class="k">原装显卡</div><div class="v">${esc(m.stock_gpu)} · ${
+        m.stock_gpu_metal ? '<span style="color:var(--official)">Metal ✓</span>'
+                          : '<span style="color:var(--experimental)">非 Metal</span>'}</div></div>` : ""}
       <div><div class="k">NVMe 引导</div><div class="v">${NVME_LABEL[m.nvme_bootable] || esc(m.nvme_bootable)}</div></div>
       <div><div class="k">官方最高系统</div><div class="v">${esc(m.max_macos || "未知")}</div></div>
     </div>
@@ -314,7 +332,7 @@ async function showModel(id) {
         <span class="tag">${c.config_type === "standard" ? "标配" : "选配"}</span>
         ${c.ghz}GHz ${c.cores}核 — ${esc(c.cpu_model)}${c.notes ? ` <span style="color:var(--muted)">(${esc(c.notes)})</span>` : ""}
       </div>`).join("")}</div>` : ""}
-    ${d.platform && d.platform.notes ? `<div class="notes" style="margin-top:10px;font-size:12px">${esc(d.platform.notes)}</div>` : ""}
+    ${d.platform && d.platform.notes && m.ram_slots > 0 ? `<div class="notes" style="margin-top:10px;font-size:12px">${esc(d.platform.notes)}</div>` : ""}
     <div style="margin-top:12px" class="sources">
       <a href="${esc(m.apple_spec_url)}" target="_blank" rel="noopener">↗ Apple 官方规格页 (来源)</a>
       ${d.platform && d.platform.controller_source_url ? `<a href="${esc(d.platform.controller_source_url)}" target="_blank" rel="noopener">↗ Intel ARK (控制器上限来源)</a>` : ""}
@@ -323,11 +341,14 @@ async function showModel(id) {
   <div class="card"><h2 style="font-size:15px">升级建议 (推荐引擎)</h2>
     <div class="adv-controls">
       <label style="font-size:12px;color:var(--muted)">用途</label>
-      <select id="adv-usage" onchange="toggleWildRisk(this.value)">${USAGE_OPTS.filter(u => u !== "野路子" || d.wild_available).map(u => `<option>${u}</option>`).join("")}</select>
+      <select id="adv-usage" onchange="toggleWildRisk(this.value)">${USAGE_OPTS.filter(u => (u !== "野路子" || d.wild_available) && (u !== "黑苹果续命" || d.oclp_applicable) && (u !== "秀肌肉" || d.flex_available)).map(u => `<option>${u}</option>`).join("")}</select>
       <span id="adv-risk-wrap"><label style="font-size:12px;color:var(--muted)">风险偏好</label>
       <select id="adv-risk">${RISK_OPTS.map(([v, t]) =>
         `<option value="${v}"${v === "community" ? " selected" : ""}>${t}</option>`).join("")}</select></span>
       <span id="adv-risk-fixed" style="display:none;font-size:12px;color:var(--experimental)">风险: 拉满 (野路子固定)</span>
+      <span id="adv-target-wrap" style="display:none"><label style="font-size:12px;color:var(--muted)">目标系统</label>
+      <select id="adv-target">${(d.oclp_targets || []).map((t, i, a) =>
+        `<option value="${t.version}"${i === a.length - 1 ? " selected" : ""}>macOS ${t.version} (${t.name})</option>`).join("")}</select></span>
       <button onclick="runAdvise()">生成推荐</button>
     </div>
     <div id="advise-result"></div>
@@ -348,10 +369,12 @@ async function showModel(id) {
     </div>`).join("")}</div>` : ""}
   ${d.gpu_archs.length ? `<div class="card"><details><summary style="font-size:14px;font-weight:600;cursor:pointer">本机显卡升级路径: ${d.gpu_paths.map(esc).join(" / ")} — 展开查看 GPU 架构 × macOS 驱动区间</summary>
     ${d.gpu_archs.map(g => `<div class="entry" style="margin-top:10px">
-      <div class="title">${esc(g.vendor)} ${esc(g.arch)}${g.example_cards ? ` <span style="color:var(--muted);font-weight:400">(${esc(g.example_cards)})</span>` : ""}</div>
+      <div class="title">${esc(g.vendor)} ${esc(g.arch)}${g.path_class === "unorthodox" ? ` <span class="badge" style="color:#b02a37;background:#fdecee">野路子</span>` : ""}${g.example_cards ? ` <span style="color:var(--muted);font-weight:400">(${esc(g.example_cards)})</span>` : ""}</div>
       <div class="tags"><span class="tag">原生驱动: ${esc(g.macos_native)}</span>
         ${g.macos_patched ? `<span class="tag">补丁后: ${esc(g.macos_patched)}</span>` : ""}
-        ${g.metal_support ? `<span class="tag">Metal: ${esc(g.metal_support)}</span>` : ""}</div>
+        ${g.metal_support ? `<span class="tag">Metal: ${esc(g.metal_support)}</span>` : ""}
+        ${g.entry_cards ? `<span class="tag">门槛卡: ${esc(g.entry_cards)}</span>` : ""}
+        ${g.flagship_cards ? `<span class="tag">拉满卡: ${esc(g.flagship_cards)}</span>` : ""}</div>
       ${g.notes ? `<div class="notes">${esc(g.notes)}</div>` : ""}
       ${sourcesHtml(g)}
     </div>`).join("")}</details></div>` : ""}
@@ -385,14 +408,17 @@ function toggleWildRisk(usage) {
   const wild = usage === "野路子";
   document.getElementById("adv-risk-wrap").style.display = wild ? "none" : "";
   document.getElementById("adv-risk-fixed").style.display = wild ? "" : "none";
+  document.getElementById("adv-target-wrap").style.display = usage === "黑苹果续命" ? "" : "none";
 }
 
 async function runAdvise() {
   const usage = document.getElementById("adv-usage").value;
   const risk = usage === "野路子" ? "experimental" : document.getElementById("adv-risk").value;
+  const targetSel = document.getElementById("adv-target");
+  const target = usage === "黑苹果续命" && targetSel && targetSel.value ? `&target=${encodeURIComponent(targetSel.value)}` : "";
   const el = document.getElementById("advise-result");
   el.innerHTML = `<div style="color:var(--muted);font-size:13px">计算中…</div>`;
-  const resp = await fetch(`/api/advise?id=${encodeURIComponent(activeId)}&usage=${encodeURIComponent(usage)}&risk=${risk}`);
+  const resp = await fetch(`/api/advise?id=${encodeURIComponent(activeId)}&usage=${encodeURIComponent(usage)}&risk=${risk}${target}`);
   if (!resp.ok) { el.innerHTML = `<div class="notes">请求失败</div>`; return; }
   const d = await resp.json();
   let html = `<h3 class="layer" style="margin-top:10px">瓶颈诊断</h3>
@@ -402,7 +428,7 @@ async function runAdvise() {
   } else {
     html += `<h3 class="layer" style="margin-top:14px">推荐 (${d.recommendations.length} 条, 按用途权重排序)</h3>`;
     html += d.recommendations.map((r, i) => `<div class="entry l-${r.layer}">
-      <div class="title">${i + 1}. <span class="badge ${r.layer}">${LAYER_LABEL[r.layer]}</span>${r.wild_exclusive ? ` <span class="badge" style="color:#b02a37;background:#fdecee">野路子独有</span>` : ""} ${esc(r.title)}</div>
+      <div class="title">${i + 1}. <span class="badge ${r.layer}">${LAYER_LABEL[r.layer]}</span>${r.wild_exclusive ? ` <span class="badge" style="color:#b02a37;background:#fdecee">野路子独有</span>` : ""}${r.factory_part ? ` <span class="badge official">原厂选配同款</span>` : ""} ${esc(r.title)}</div>
       ${r.why ? `<div style="font-size:12px;color:var(--muted);margin:3px 0">为什么: ${esc(r.why)}</div>` : ""}
       <div class="tags">
         ${r.result ? `<span class="tag">${RESULT_LABEL[r.result] || esc(r.result)}</span>` : ""}
@@ -468,7 +494,8 @@ class Handler(BaseHTTPRequestHandler):
             if usage not in advisor.USAGES or risk not in advisor.RISKS:
                 self._send(json.dumps({"error": "参数无效"}), status=400)
                 return
-            result = advisor.advise(ident, usage, risk)
+            target = q.get("target", [None])[0] or None
+            result = advisor.advise(ident, usage, risk, target=target)
             if result is None:
                 self._send(json.dumps({"error": "not found"}), status=404)
             else:

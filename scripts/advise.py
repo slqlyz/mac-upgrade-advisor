@@ -5,7 +5,7 @@
     python3 scripts/advise.py MacBookPro11,4 --usage 视频剪辑 --risk community
     python3 scripts/advise.py iMac12,2 --usage 跑虚拟机 --risk experimental
 
-用途: 轻度日用 / 黑苹果续命 / Windows双系统 / 秀肌肉 / 野路子 (支持简写模糊匹配)
+用途: 轻度日用 / 黑苹果续命 / 秀肌肉 / 野路子 (支持简写模糊匹配)
 风险: official (仅官方) / community (接受社区验证, 默认) / experimental (接受实验+理论推导)
 """
 
@@ -36,14 +36,21 @@ def main():
     parser.add_argument("model", help="机型标识, 如 MacBookPro11,4")
     parser.add_argument("--usage", required=True, help="用途 (可简写, 如 剪辑/虚拟机/黑苹果)")
     parser.add_argument("--risk", default="community", choices=RISKS)
+    parser.add_argument("--target", default=None,
+                        help="黑苹果续命的目标系统版本 (如 12/15), 缺省取 OCLP 支持的最高版")
     args = parser.parse_args()
 
     usage = match_usage(args.usage)
     if usage == "野路子" and args.risk != "experimental":
         print("(野路子默认拉满风险, --risk 参数已忽略)\n")
-    result = advise(args.model, usage, args.risk)
+    result = advise(args.model, usage, args.risk, target=args.target)
     if result is None:
         sys.exit(f"未找到机型: {args.model} (用 scripts/lookup.py --list 查看)")
+    if result.get("error"):
+        sys.exit(result["error"])
+    if usage == "黑苹果续命" and result.get("target_options"):
+        opts = ", ".join(f"{o['version']} ({o['name']})" for o in result["target_options"])
+        print(f"可选目标系统: {opts}  (--target 指定)\n")
 
     print(f"═══ 升级建议: {result['model_name']} ({result['model_identifier']}) ═══")
     risk_label = "拉满 (野路子固定)" if usage == "野路子" else result["risk"]
@@ -62,7 +69,8 @@ def main():
         print(f"推荐 ({len(result['recommendations'])} 条, 按用途权重排序, 层级硬性分界):\n")
         for i, r in enumerate(result["recommendations"], 1):
             wild = "【野路子独有】" if r.get("wild_exclusive") else ""
-            print(f"  {i}. [{LAYER_LABEL[r['layer']]}]{wild} {r['title']}")
+            fac = "【原厂选配同款】" if r.get("factory_part") else ""
+            print(f"  {i}. [{LAYER_LABEL[r['layer']]}]{wild}{fac} {r['title']}")
             if r["why"]:
                 print(f"     为什么: {r['why']}")
             details = []

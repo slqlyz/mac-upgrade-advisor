@@ -113,12 +113,22 @@ def show_model(conn, m):
         plat = conn.execute("SELECT * FROM platforms WHERE id = ?",
                             (m["platform_id"],)).fetchone()
     print("官方规格 (来源: Apple):")
-    ctrl = f" / 控制器理论上限 {plat['controller_max_ram_gb']}GB (平台: {plat['name']}, 来源 Intel ARK)" \
-        if plat and plat["controller_max_ram_gb"] else ""
-    print(f"  内存: 官方上限 {m['official_max_ram_gb']}GB{ctrl}, {m['ram_type']}, 插槽 x{m['ram_slots']}")
-    if plat and plat["notes"]:
+    ctrl = ""
+    if plat and plat["controller_max_ram_gb"] and m["ram_slots"] > 0:
+        mod = plat["max_module_gb"]
+        phys = min(plat["controller_max_ram_gb"], m["ram_slots"] * mod) if mod else plat["controller_max_ram_gb"]
+        detail = f"{m['ram_slots']}槽×单条{mod}GB, 控制器 {plat['controller_max_ram_gb']}GB" if mod \
+            else f"控制器 {plat['controller_max_ram_gb']}GB"
+        vary = " ⚠随 CPU SKU 而异, 见平台备注" if phys < m["official_max_ram_gb"] else ""
+        ctrl = f" / 物理可达 {phys}GB ({detail}{vary}; 平台: {plat['name']}, 来源 Intel ARK)"
+    ram_upg = "插槽式, 可自行升级" if m["ram_slots"] > 0 else "焊接, 常规不可升级"
+    print(f"  内存: 官方上限 {m['official_max_ram_gb']}GB{ctrl}, {m['ram_type']}, 插槽 x{m['ram_slots']} — {ram_upg}")
+    if plat and plat["notes"] and m["ram_slots"] > 0:
         print(f"    平台备注: {plat['notes']}")
     print(f"  存储接口: {m['storage_interface']}  |  NVMe 引导: {NVME_LABEL.get(m['nvme_bootable'], m['nvme_bootable'])}")
+    if m["stock_gpu"]:
+        gm = "Metal ✓" if m["stock_gpu_metal"] else "非 Metal (OCLP 新系统体验受损)"
+        print(f"  原装显卡: {m['stock_gpu']} — {gm}")
     sock = m['cpu_socket'] or '未知'
     upg = ("常规不可升级 (板级改装属专业路径, 见约束)" if sock.startswith("BGA")
            else "插槽式, CPU 可物理换装 (同代固件约束见下)" if sock.startswith("LGA")

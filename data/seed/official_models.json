@@ -32,7 +32,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "HDD 5400rpm (SSD 选配)"
+      "stock_storage": "HDD 5400rpm (SSD 选配)",
+      "stock_gpu": "Intel HD Graphics 4000",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "MacBook Pro (15-inch, Mid 2010)",
@@ -72,7 +75,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "HDD 5400rpm (SSD 选配)"
+      "stock_storage": "HDD 5400rpm (SSD 选配)",
+      "stock_gpu": "NVIDIA GeForce GT 330M + Intel HD Graphics",
+      "stock_gpu_metal": 0,
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显"
     },
     {
       "model_name": "MacBook Pro (Retina, 13-inch, Late 2013)",
@@ -112,7 +118,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "Intel Iris 5100",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "MacBook Pro (Retina, 15-inch, Mid 2015)",
@@ -152,7 +161,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "Intel Iris Pro 5200",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "MacBook Pro (Retina, 13-inch, Early 2015)",
@@ -192,7 +204,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "Intel Iris 6100",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)",
@@ -225,7 +240,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "Intel Iris 540",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "MacBook Air (13-inch, Mid 2013)",
@@ -258,7 +276,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "Intel HD 5000",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "MacBook Air (13-inch, Early 2015)",
@@ -291,7 +312,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "Intel HD 6000",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "Mac mini (Late 2012)",
@@ -324,7 +348,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "HDD 5400rpm (SSD/Fusion 选配)"
+      "stock_storage": "HDD 5400rpm (SSD/Fusion 选配)",
+      "stock_gpu": "Intel HD 4000",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "Mac mini (Late 2014)",
@@ -371,7 +398,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "HDD 5400rpm (Fusion/SSD 选配)"
+      "stock_storage": "HDD 5400rpm (Fusion/SSD 选配)",
+      "stock_gpu": "Intel HD 5000 / Iris 5100",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "Mac mini (2018)",
@@ -411,7 +441,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "Intel UHD 630",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "无显卡类 caveat"
     },
     {
       "model_name": "iMac (27-inch, Mid 2011)",
@@ -451,7 +484,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "HDD 7200rpm (SSD 选配)"
+      "stock_storage": "HDD 7200rpm (SSD 选配)",
+      "stock_gpu": "AMD Radeon HD 6770M/6970M (TeraScale)",
+      "stock_gpu_metal": 0,
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显"
     },
     {
       "model_name": "iMac (27-inch, Late 2012)",
@@ -491,7 +527,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "HDD 7200rpm (Fusion/SSD 选配)"
+      "stock_storage": "HDD 7200rpm (Fusion/SSD 选配)",
+      "stock_gpu": "NVIDIA GTX 660M–680MX (Kepler)",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "iMac (27-inch, Late 2013)",
@@ -531,7 +570,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "HDD 7200rpm (Fusion/SSD 选配)"
+      "stock_storage": "HDD 7200rpm (Fusion/SSD 选配)",
+      "stock_gpu": "NVIDIA GT 755M–GTX 780M (Kepler)",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "iMac (Retina 5K, 27-inch, Late 2015)",
@@ -571,7 +613,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "HDD/Fusion (SSD 选配)"
+      "stock_storage": "HDD/Fusion (SSD 选配)",
+      "stock_gpu": "AMD R9 M380/M390/M395X (GCN)",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "iMac (Retina 5K, 27-inch, 2017)",
@@ -618,7 +663,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "Fusion (SSD 选配)"
+      "stock_storage": "Fusion (SSD 选配)",
+      "stock_gpu": "AMD Radeon Pro 570/575/580 (Polaris)",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "无显卡类 caveat (Polaris 驱动仍原生)"
     },
     {
       "model_name": "iMac (Retina 5K, 27-inch, 2019)",
@@ -665,7 +713,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "Fusion (SSD 选配)"
+      "stock_storage": "Fusion (SSD 选配)",
+      "stock_gpu": "AMD Radeon Pro 570X–Vega 48",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "无显卡类 caveat"
     },
     {
       "model_name": "iMac (Retina 5K, 27-inch, 2020)",
@@ -712,7 +763,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "AMD Radeon Pro 5300–5700 XT (RDNA)",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "无显卡类 caveat"
     },
     {
       "model_name": "Mac Pro (Mid 2010)",
@@ -773,7 +827,10 @@
           "notes": "双路, 2×6核"
         }
       ],
-      "stock_storage": "HDD 7200rpm"
+      "stock_storage": "HDD 7200rpm",
+      "stock_gpu": "ATI Radeon HD 5770/5870 (TeraScale)",
+      "stock_gpu_metal": 0,
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显; 换 Metal 卡后按所装卡计"
     },
     {
       "model_name": "Mac Pro (Late 2013)",
@@ -820,7 +877,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "双 AMD FirePro D300/D500/D700 (GCN)",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "MacBook Pro (Retina, 15-inch, Mid 2015)",
@@ -853,7 +913,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "Intel Iris Pro + AMD R9 M370X",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "MacBook Pro (Retina, 15-inch, Mid 2012)",
@@ -893,7 +956,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "Intel HD 4000 + NVIDIA GT 650M (Kepler)",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "MacBook Air (13-inch, Mid 2012)",
@@ -926,7 +992,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "Intel HD 4000",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "iMac (21.5-inch, Mid 2011)",
@@ -966,7 +1035,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "HDD 7200rpm"
+      "stock_storage": "HDD 7200rpm",
+      "stock_gpu": "AMD Radeon HD 6750M/6770M (TeraScale)",
+      "stock_gpu_metal": 0,
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显"
     },
     {
       "model_name": "MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)",
@@ -999,7 +1071,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "Intel Iris Plus 640",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
     },
     {
       "model_name": "Mac Pro (2019)",
@@ -1053,7 +1128,10 @@
           "notes": null
         }
       ],
-      "stock_storage": "SSD"
+      "stock_storage": "SSD",
+      "stock_gpu": "AMD Radeon Pro 580X 起 (MPX 模块)",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "无显卡类 caveat"
     }
   ]
 }
