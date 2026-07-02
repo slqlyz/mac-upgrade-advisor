@@ -1,0 +1,531 @@
+{
+  "_comment": "社区方案试点: MacBook Pro (Retina, 15-inch, Mid 2015) / Mac mini (Late 2012) / iMac (27-inch, Mid 2011)。只收录多个独立来源互相印证的方案 (corroboration_count >= 2), 全部来源 URL 已于 2026-07-02 逐一验证在线。",
+  "components": [
+    {
+      "key": "nvme-m2-generic",
+      "category": "ssd",
+      "manufacturer": null,
+      "part_model": null,
+      "is_generic": 1,
+      "interface": "M.2-NVMe",
+      "capacity_gb": null,
+      "speed_spec": "PCIe 3.0 x4",
+      "requires_adapter": 1,
+      "notes": "任意 M.2 2280 零售 NVMe SSD (兼容型号见来源帖兼容列表); 装入 2013-2015 MacBook 需转接卡"
+    },
+    {
+      "key": "sintech-ngff2013",
+      "category": "adapter",
+      "manufacturer": "Sintech",
+      "part_model": "ST-NGFF2013",
+      "is_generic": 0,
+      "interface": "Apple 12+16pin ↔ M.2 NVMe",
+      "capacity_gb": null,
+      "speed_spec": null,
+      "requires_adapter": 0,
+      "notes": "2013-2015 MacBook Pro/Air 专有 SSD 槽转 M.2 NVMe 的最常用转接卡"
+    },
+    {
+      "key": "samsung-970-evo-plus",
+      "category": "ssd",
+      "manufacturer": "Samsung",
+      "part_model": "970 EVO Plus",
+      "is_generic": 0,
+      "interface": "M.2-NVMe",
+      "capacity_gb": null,
+      "speed_spec": "PCIe 3.0 x4",
+      "requires_adapter": 1,
+      "notes": null
+    },
+    {
+      "key": "samsung-pm981",
+      "category": "ssd",
+      "manufacturer": "Samsung",
+      "part_model": "PM981 (OEM)",
+      "is_generic": 0,
+      "interface": "M.2-NVMe",
+      "capacity_gb": null,
+      "speed_spec": "PCIe 3.0 x4",
+      "requires_adapter": 1,
+      "notes": "OEM 拆机盘"
+    },
+    {
+      "key": "sata3-ssd-generic",
+      "category": "ssd",
+      "manufacturer": null,
+      "part_model": null,
+      "is_generic": 1,
+      "interface": "SATA-2.5",
+      "capacity_gb": null,
+      "speed_spec": "SATA III 6Gbps",
+      "requires_adapter": 0,
+      "notes": "任意 2.5 英寸零售 SATA III SSD"
+    },
+    {
+      "key": "ddr3l-1600-sodimm-8gb",
+      "category": "ram",
+      "manufacturer": null,
+      "part_model": null,
+      "is_generic": 1,
+      "interface": "DDR3L-SODIMM",
+      "capacity_gb": 8,
+      "speed_spec": "1600MHz (PC3L-12800)",
+      "requires_adapter": 0,
+      "notes": "任意符合规格的 8GB DDR3L-1600 SO-DIMM"
+    },
+    {
+      "key": "ddr3-1333-sodimm-8gb",
+      "category": "ram",
+      "manufacturer": null,
+      "part_model": null,
+      "is_generic": 1,
+      "interface": "DDR3-SODIMM",
+      "capacity_gb": 8,
+      "speed_spec": "1333MHz (PC3-10600)",
+      "requires_adapter": 0,
+      "notes": "任意符合规格的 8GB DDR3-1333 SO-DIMM"
+    },
+    {
+      "key": "quadro-k4100m",
+      "category": "gpu",
+      "manufacturer": "NVIDIA",
+      "part_model": "Quadro K4100M",
+      "is_generic": 0,
+      "interface": "MXM 3.0-B",
+      "capacity_gb": 4,
+      "speed_spec": null,
+      "requires_adapter": 0,
+      "notes": "笔记本 MXM 显卡, 用于 2011 iMac 显卡升级"
+    },
+    {
+      "key": "xeon-x5690-dual",
+      "category": "cpu",
+      "manufacturer": "Intel",
+      "part_model": "2× Xeon X5690",
+      "is_generic": 0,
+      "interface": "LGA1366",
+      "capacity_gb": null,
+      "speed_spec": "3.46GHz 2×6核 (Westmere-EP)",
+      "requires_adapter": 0,
+      "notes": "双路顶配换装"
+    },
+    {
+      "key": "e5-2697-v2",
+      "category": "cpu",
+      "manufacturer": "Intel",
+      "part_model": "Xeon E5-2697 v2",
+      "is_generic": 0,
+      "interface": "LGA2011",
+      "capacity_gb": null,
+      "speed_spec": "2.7GHz 12核 (Ivy Bridge-EP)",
+      "requires_adapter": 0,
+      "notes": null
+    },
+    {
+      "key": "ddr3-ecc-rdimm-16gb",
+      "category": "ram",
+      "manufacturer": null,
+      "part_model": null,
+      "is_generic": 1,
+      "interface": "DDR3-ECC-RDIMM",
+      "capacity_gb": 16,
+      "speed_spec": "1333MHz",
+      "requires_adapter": 0,
+      "notes": null
+    },
+    {
+      "key": "ddr3-1866-ecc-rdimm-32gb",
+      "category": "ram",
+      "manufacturer": null,
+      "part_model": null,
+      "is_generic": 1,
+      "interface": "DDR3-ECC-RDIMM",
+      "capacity_gb": 32,
+      "speed_spec": "1866MHz",
+      "requires_adapter": 0,
+      "notes": null
+    },
+    {
+      "key": "ddr3l-1867-sodimm-16gb",
+      "category": "ram",
+      "manufacturer": null,
+      "part_model": null,
+      "is_generic": 1,
+      "interface": "DDR3L-SODIMM",
+      "capacity_gb": 16,
+      "speed_spec": "1867MHz (PC3L-14900)",
+      "requires_adapter": 0,
+      "notes": null
+    },
+    {
+      "key": "ddr4-2666-sodimm-32gb",
+      "category": "ram",
+      "manufacturer": null,
+      "part_model": null,
+      "is_generic": 1,
+      "interface": "DDR4-SODIMM",
+      "capacity_gb": 32,
+      "speed_spec": "2666MHz",
+      "requires_adapter": 0,
+      "notes": null
+    },
+    {
+      "key": "quadro-k2100m",
+      "category": "gpu",
+      "manufacturer": "NVIDIA",
+      "part_model": "Quadro K2100M",
+      "is_generic": 0,
+      "interface": "MXM 3.0-A",
+      "capacity_gb": 2,
+      "speed_spec": null,
+      "requires_adapter": 0,
+      "notes": "21.5 寸 2011 iMac 显卡升级常用 (Kepler)"
+    },
+    {
+      "key": "i7-2600s",
+      "category": "cpu",
+      "manufacturer": "Intel",
+      "part_model": "Core i7-2600S",
+      "is_generic": 0,
+      "interface": "LGA1155",
+      "capacity_gb": null,
+      "speed_spec": "2.8GHz 4核 (Sandy Bridge)",
+      "requires_adapter": 0,
+      "notes": "21.5 寸 2011 iMac 出厂顶配同款, 换装即插即用"
+    }
+  ],
+  "compatibility": [
+    {
+      "model_identifier": "MacBookPro11,4",
+      "component_key": "nvme-m2-generic",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/upgrading-2013-2014-macbook-pro-ssd-to-m-2-nvme.2034976/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.13–12.6",
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": 2000,
+      "notes": "需 BootROM 已随 macOS 10.13+ 更新; 必须配转接卡 (如 Sintech); 部分型号睡眠/休眠唤醒有问题, 建议参照来源帖兼容列表选盘并关闭 hibernation (standby); Boot Camp 下 NVMe 驱动另行处理"
+    },
+    {
+      "model_identifier": "MacBookPro11,4",
+      "component_key": "sintech-ngff2013",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/upgrading-2013-2014-macbook-pro-ssd-to-m-2-nvme.2034976/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.13–12.6",
+      "result": "works",
+      "max_working_capacity_gb": null,
+      "notes": "建议选长款 (带固定螺丝位) 版本, 短款接触不良案例见来源帖"
+    },
+    {
+      "model_identifier": "Macmini6,2",
+      "component_key": "sata3-ssd-generic",
+      "confidence_level": "community_tested",
+      "source_url": "https://www.ifixit.com/Guide/Mac+mini+Late+2012+Hard+Drive+Replacement/11716",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/ssd-upgrade-for-2012-mac-mini.2127375/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.8–10.15",
+      "result": "works",
+      "max_working_capacity_gb": null,
+      "notes": "SATA III 满速 (~550MB/s); 上位硬盘更换需抽出逻辑板, 下位较易; 可加装第二块盘 (Dual Drive Kit, 需另购排线)"
+    },
+    {
+      "model_identifier": "Macmini6,2",
+      "component_key": "ddr3l-1600-sodimm-8gb",
+      "confidence_level": "official",
+      "source_url": "https://support.apple.com/en-us/111926",
+      "source_type": "apple_support",
+      "extra_source_urls": [],
+      "corroboration_count": 1,
+      "verified_macos_versions": null,
+      "result": "works",
+      "max_working_capacity_gb": 16,
+      "notes": "官方支持 2 条共 16GB; 用户可自行更换 (底盖即内存仓, Apple 官方视为用户可升级部件)"
+    },
+    {
+      "model_identifier": "iMac12,2",
+      "component_key": "ddr3-1333-sodimm-8gb",
+      "confidence_level": "community_tested",
+      "source_url": "https://everymac.com/systems/apple/imac/specs/imac-core-i5-2.7-27-inch-aluminum-mid-2011-thunderbolt-specs.html",
+      "source_type": "everymac",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/memory-upgrade-for-27-imac-mid-2011.1895200/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.6.8–10.13",
+      "result": "works",
+      "max_working_capacity_gb": 32,
+      "notes": "官方标称上限 16GB, 实测 4×8GB=32GB 可被系统完整识别使用 (EveryMac 实测 + 论坛多例印证)"
+    },
+    {
+      "model_identifier": "iMac12,2",
+      "component_key": "quadro-k4100m",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/2011-imac-graphics-card-upgrade.1596614/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://lowendmac.com/2025/low-end-mac-mailbag-upgrading-a-2011-27-imac-with-a-quadro-k4100m/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.13–12 (12 需 OCLP)",
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": null,
+      "notes": "需刷对应 MXM vBIOS (NVFlash 或 CH341a 编程器); 非即插即用, 需一定动手能力; 启动画面支持视 vBIOS 而定; 同类 AMD WX4130/4150 存在部分机器不识别的未解问题 (见来源帖)"
+    },
+    {
+      "model_identifier": "MacBookAir6,2",
+      "component_key": "nvme-m2-generic",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/upgrading-2013-2014-macbook-pro-ssd-to-m-2-nvme.2034976/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.13–12.6",
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": 2000,
+      "notes": "需 BootROM 已随 10.13+ 更新; 需 Sintech 类转接卡; 睡眠/休眠注意事项见来源帖; 本机刀片槽为 PCIe 2.0 x2, NVMe 盘速度封顶约 1400MB/s"
+    },
+    {
+      "model_identifier": "MacBookAir7,2",
+      "component_key": "nvme-m2-generic",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/upgrading-2013-2014-macbook-pro-ssd-to-m-2-nvme.2034976/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.13–12.6",
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": 2000,
+      "notes": "需 BootROM 已随 10.13+ 更新; 需 Sintech 类转接卡; 睡眠/休眠注意事项见来源帖"
+    },
+    {
+      "model_identifier": "MacBookPro11,1",
+      "component_key": "nvme-m2-generic",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/upgrading-2013-2014-macbook-pro-ssd-to-m-2-nvme.2034976/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.13–12.6",
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": 2000,
+      "notes": "需 BootROM 已随 10.13+ 更新; 需 Sintech 类转接卡; 睡眠/休眠注意事项见来源帖; 本机刀片槽为 PCIe 2.0 x2, 速度受限"
+    },
+    {
+      "model_identifier": "MacBookPro12,1",
+      "component_key": "nvme-m2-generic",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/upgrading-2013-2014-macbook-pro-ssd-to-m-2-nvme.2034976/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.13–12.6",
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": 2000,
+      "notes": "需 BootROM 已随 10.13+ 更新; 需 Sintech 类转接卡; 睡眠/休眠注意事项见来源帖"
+    },
+    {
+      "model_identifier": "MacBookPro11,5",
+      "component_key": "nvme-m2-generic",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/upgrading-2013-2014-macbook-pro-ssd-to-m-2-nvme.2034976/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.13–12.6",
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": 2000,
+      "notes": "需 BootROM 已随 10.13+ 更新; 需 Sintech 类转接卡; 睡眠/休眠注意事项见来源帖"
+    },
+    {
+      "model_identifier": "MacPro5,1",
+      "component_key": "xeon-x5690-dual",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/mac-pro-5-1-2012-cpu-upgrade-to-2-x5690.2094980/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/mac-pro-cpu-compatibility-list.1954766/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": null,
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": null,
+      "notes": "双路顶配换装, 免刷免开盖 (真 5,1; 4,1 刷 5,1 固件的机器需开盖 CPU); X5690 TDP 130W 超出 SMC 按 95W 设计的风扇/供电模型, 高负载下行为可能异常"
+    },
+    {
+      "model_identifier": "MacPro5,1",
+      "component_key": "ddr3-ecc-rdimm-16gb",
+      "confidence_level": "community_tested",
+      "source_url": "https://everymac.com/systems/apple/mac_pro/specs/mac-pro-twelve-core-2.66-mid-2010-westmere-specs.html",
+      "source_type": "everymac",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/mac-pro-5-1-2012-cpu-upgrade-to-2-x5690.2094980/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.9+",
+      "result": "works",
+      "max_working_capacity_gb": 128,
+      "notes": "双路 8×16GB=128GB, 需 OS X 10.9+ (EveryMac 实测); 单路机型上限更低; 官方仅标 64GB (双路)"
+    },
+    {
+      "model_identifier": "MacPro6,1",
+      "component_key": "e5-2697-v2",
+      "confidence_level": "community_tested",
+      "source_url": "https://blog.greggant.com/posts/2019/05/07/the-definitive-mac-pro-2013-trashcan-guide.html",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/upgrade-mac-pro-2013-from-3-5ghz-6-core-to-2-7ghz-12-core.2212134/",
+        "https://forums.macrumors.com/threads/mac-pro-cpu-compatibility-list.1954766/"
+      ],
+      "corroboration_count": 3,
+      "verified_macos_versions": null,
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": null,
+      "notes": "CPU 为 LGA2011 插座非焊接, E5 v2 全家族兼容 (v3/v4 不行); 2697 v2 是出厂顶配同款, 130W 对散热已到上限的 6,1 相对安全; 拆装需专用星形螺丝刀且步骤较深"
+    },
+    {
+      "model_identifier": "MacPro6,1",
+      "component_key": "ddr3-1866-ecc-rdimm-32gb",
+      "confidence_level": "community_tested",
+      "source_url": "https://blog.greggant.com/posts/2019/05/07/the-definitive-mac-pro-2013-trashcan-guide.html",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/best-upgrades-for-2013-mac-pro.2341798/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": null,
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": 128,
+      "notes": "4×32GB=128GB 可识别可用, 但内存降速运行 (64GB 时 1866MHz, 128GB 降至 1066 甚至 800MHz), 内存带宽敏感的负载需权衡"
+    },
+    {
+      "model_identifier": "iMac17,1",
+      "component_key": "ddr3l-1867-sodimm-16gb",
+      "confidence_level": "community_tested",
+      "source_url": "https://eshop.macsales.com/blog/33878-owc-tests-memory-configurations-in-late-2015-27-inch-imac-with-5k-retina/",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/imac-27-late-2015-ram-upgrade.1958153/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": null,
+      "result": "works",
+      "max_working_capacity_gb": 64,
+      "notes": "官方上限 32GB, OWC 实验室实测 4×16GB=64GB 完整可用 (与 Skylake 控制器 64GB 上限吻合)"
+    },
+    {
+      "model_identifier": "iMac19,1",
+      "component_key": "ddr4-2666-sodimm-32gb",
+      "confidence_level": "community_tested",
+      "source_url": "https://eshop.macsales.com/blog/47735-its-official-owcs-128gb-memory-upgrade-for-the-2019-imac-retina-5k",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://9to5mac.com/2019/04/05/how-to-upgrade-27-inch-5k-imac-2019-128-gb-ram-video-tutorial/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": null,
+      "result": "works",
+      "max_working_capacity_gb": 128,
+      "notes": "官方上限 64GB, OWC MaxRAM 认证 4×32GB=128GB 完整可用 (与 Coffee Lake-S 控制器 128GB 上限吻合); 后盖内存仓用户可自行更换"
+    },
+    {
+      "model_identifier": "iMac12,1",
+      "component_key": "quadro-k2100m",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/2011-imac-graphics-card-upgrade.1596614/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://tinkerdifferent.com/threads/mid-2011-21-5-imac-gpu-replacement.442/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.13–12 (12 需 OCLP)",
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": null,
+      "notes": "21.5 寸为 MXM Type A 短卡位, K2100M (Kepler) 是驱动寿命最长的选择; 需刷 vBIOS, 非即插即用"
+    },
+    {
+      "model_identifier": "iMac12,1",
+      "component_key": "i7-2600s",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/cpu-upgrade-imac-mid-2011.2230813/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/2011-imac-cpu-upgrade-possibilities.1225483/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.6.8–10.13",
+      "result": "works",
+      "max_working_capacity_gb": null,
+      "notes": "出厂顶配同款 (微码必然在固件内), 社区多例即插即用; 同理 12,2 可上 i7-2600"
+    }
+  ],
+  "known_conflicts": [
+    {
+      "model_identifier": "MacBookPro11,4",
+      "component_a_key": "samsung-pm981",
+      "component_b_key": null,
+      "severity": "instability",
+      "description": "Samsung OEM 型号 (PM981/PM991, 及 Micron 2200V) 缺少对 Mac 环境的固件适配, 表现为内核崩溃或无法识别, 社区一致列为不可用型号",
+      "workaround": "避开 OEM 拆机盘, 选零售型号并核对来源帖兼容列表",
+      "affected_macos_versions": "全版本",
+      "source_url": "https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html",
+      "source_type": "dortania",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/upgrading-2013-2014-macbook-pro-ssd-to-m-2-nvme.2034976/"
+      ],
+      "corroboration_count": 2
+    },
+    {
+      "model_identifier": "MacBookPro11,4",
+      "component_a_key": "samsung-970-evo-plus",
+      "component_b_key": null,
+      "severity": "instability",
+      "description": "970 EVO Plus 旧固件与 Mac 存在兼容问题 (无法引导/异常), 新固件 (2B2QEXM7 及以后) 已修复",
+      "workaround": "装机前先在 PC 上用 Samsung Magician 升级到最新固件",
+      "affected_macos_versions": "全版本 (旧固件)",
+      "source_url": "https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html",
+      "source_type": "dortania",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/upgrading-2013-2014-macbook-pro-ssd-to-m-2-nvme.2034976/"
+      ],
+      "corroboration_count": 2
+    },
+    {
+      "model_identifier": "iMac12,2",
+      "component_a_key": "sata3-ssd-generic",
+      "component_b_key": null,
+      "severity": "feature_loss",
+      "description": "2011 iMac 原厂硬盘带 Apple 定制温感固件, 换第三方 SSD/HDD 后 SMC 失去温度信号, 硬盘风扇转速拉满",
+      "workaround": "硬件方案: OWC In-line Digital Thermal Sensor (推荐); 软件方案: Macs Fan Control 手动接管 (牺牲自动温控, 有散热风险)",
+      "affected_macos_versions": "全版本",
+      "source_url": "https://forums.macrumors.com/threads/2011-27-imac-ssd-upgrade-fan-speed-whats-the-current-consensus.2227081/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://eshop.macsales.com/blog/27918-owc-in-line-digital-thermal-sensor-solves-imac-hard-drive-compatibility-issue/",
+        "https://www.ifixit.com/Answers/View/702869/Do+I+need+an+OWC+thermal+sensor+if+I+want+to+swap+SSD"
+      ],
+      "corroboration_count": 3
+    }
+  ]
+}

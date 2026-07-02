@@ -1,0 +1,1059 @@
+{
+  "_comment": "20 款代表性 Intel Mac 的官方规格种子数据。apple_spec_url 为 Apple support 规格页; verify_marker 是采集脚本用来确认抓到的页面确实属于该机型的标题片段。数值字段以抓取校验 + 人工抽查为准。board_id 暂缺 (TODO: 后续从 Dortania 机型表补齐, 属社区来源)。",
+  "models": [
+    {
+      "model_name": "MacBook Pro (13-inch, Mid 2012)",
+      "model_identifier": "MacBookPro9,2",
+      "release_year": 2012,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i5-3210M (2.5GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 8,
+      "ram_type": "DDR3-1600 SO-DIMM",
+      "ram_slots": 2,
+      "storage_interface": "SATA",
+      "nvme_bootable": "no",
+      "max_macos": "macOS Catalina 10.15",
+      "apple_spec_url": "https://support.apple.com/kb/SP649",
+      "verify_marker": "13-inch, Mid 2012",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-3210M",
+          "ghz": 2.5,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-3520M",
+          "ghz": 2.9,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        }
+      ],
+      "stock_storage": "HDD 5400rpm (SSD 选配)"
+    },
+    {
+      "model_name": "MacBook Pro (15-inch, Mid 2010)",
+      "model_identifier": "MacBookPro6,2",
+      "release_year": 2010,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i5-520M (2.4GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 8,
+      "ram_type": "DDR3-1066 SO-DIMM",
+      "ram_slots": 2,
+      "storage_interface": "SATA",
+      "nvme_bootable": "no",
+      "max_macos": "macOS High Sierra 10.13",
+      "apple_spec_url": "https://support.apple.com/kb/SP582",
+      "verify_marker": "15-inch, Mid 2010",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-520M",
+          "ghz": 2.4,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-540M",
+          "ghz": 2.53,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-620M",
+          "ghz": 2.66,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "HDD 5400rpm (SSD 选配)"
+    },
+    {
+      "model_name": "MacBook Pro (Retina, 13-inch, Late 2013)",
+      "model_identifier": "MacBookPro11,1",
+      "release_year": 2013,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i5-4258U (2.4GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 16,
+      "ram_type": "soldered DDR3L-1600",
+      "ram_slots": 0,
+      "storage_interface": "proprietary-AHCI (PCIe 2.0)",
+      "nvme_bootable": "firmware_update_required",
+      "max_macos": "macOS Big Sur 11",
+      "apple_spec_url": "https://support.apple.com/kb/SP691",
+      "verify_marker": "Retina, 13-inch, Late 2013",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-4258U",
+          "ghz": 2.4,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-4288U",
+          "ghz": 2.6,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-4558U",
+          "ghz": 2.8,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "MacBook Pro (Retina, 15-inch, Mid 2015)",
+      "model_identifier": "MacBookPro11,4",
+      "release_year": 2015,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i7-4770HQ (2.2GHz 4核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 16,
+      "ram_type": "soldered DDR3L-1600",
+      "ram_slots": 0,
+      "storage_interface": "proprietary-AHCI (PCIe 3.0 x4)",
+      "nvme_bootable": "firmware_update_required",
+      "max_macos": "macOS Monterey 12",
+      "apple_spec_url": "https://support.apple.com/kb/SP719",
+      "verify_marker": "Retina, 15-inch, Mid 2015",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i7-4770HQ",
+          "ghz": 2.2,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-4870HQ",
+          "ghz": 2.5,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-4980HQ",
+          "ghz": 2.8,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "MacBook Pro (Retina, 13-inch, Early 2015)",
+      "model_identifier": "MacBookPro12,1",
+      "release_year": 2015,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i5-5257U (2.7GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 16,
+      "ram_type": "soldered LPDDR3-1866",
+      "ram_slots": 0,
+      "storage_interface": "proprietary-AHCI (PCIe)",
+      "nvme_bootable": "firmware_update_required",
+      "max_macos": "macOS Monterey 12",
+      "apple_spec_url": "https://support.apple.com/kb/SP715",
+      "verify_marker": "Retina, 13-inch, Early 2015",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-5257U",
+          "ghz": 2.7,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-5287U",
+          "ghz": 2.9,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-5557U",
+          "ghz": 3.1,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)",
+      "model_identifier": "MacBookPro13,1",
+      "release_year": 2016,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i5-6360U (2.0GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 16,
+      "ram_type": "soldered LPDDR3-1866",
+      "ram_slots": 0,
+      "storage_interface": "proprietary-NVMe (可拆卸模块)",
+      "nvme_bootable": "native",
+      "max_macos": "macOS Monterey 12",
+      "apple_spec_url": "https://support.apple.com/kb/SP747",
+      "verify_marker": "Two Thunderbolt 3 ports",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-6360U",
+          "ghz": 2.0,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-6660U",
+          "ghz": 2.4,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "MacBook Air (13-inch, Mid 2013)",
+      "model_identifier": "MacBookAir6,2",
+      "release_year": 2013,
+      "family": "MacBook Air",
+      "cpu_model": "Intel Core i5-4250U (1.3GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 8,
+      "ram_type": "soldered LPDDR3-1600",
+      "ram_slots": 0,
+      "storage_interface": "proprietary-AHCI (PCIe 2.0)",
+      "nvme_bootable": "firmware_update_required",
+      "max_macos": "macOS Big Sur 11",
+      "apple_spec_url": "https://support.apple.com/kb/SP678",
+      "verify_marker": "13-inch, Mid 2013",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-4250U",
+          "ghz": 1.3,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-4650U",
+          "ghz": 1.7,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "MacBook Air (13-inch, Early 2015)",
+      "model_identifier": "MacBookAir7,2",
+      "release_year": 2015,
+      "family": "MacBook Air",
+      "cpu_model": "Intel Core i5-5250U (1.6GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 8,
+      "ram_type": "soldered LPDDR3-1600",
+      "ram_slots": 0,
+      "storage_interface": "proprietary-AHCI (PCIe)",
+      "nvme_bootable": "firmware_update_required",
+      "max_macos": "macOS Monterey 12",
+      "apple_spec_url": "https://support.apple.com/kb/SP714",
+      "verify_marker": "13-inch, Early 2015",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-5250U",
+          "ghz": 1.6,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-5650U",
+          "ghz": 2.2,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "Mac mini (Late 2012)",
+      "model_identifier": "Macmini6,2",
+      "release_year": 2012,
+      "family": "Mac mini",
+      "cpu_model": "Intel Core i7-3615QM (2.3GHz 4核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 16,
+      "ram_type": "DDR3-1600 SO-DIMM",
+      "ram_slots": 2,
+      "storage_interface": "SATA",
+      "nvme_bootable": "no",
+      "max_macos": "macOS Catalina 10.15",
+      "apple_spec_url": "https://support.apple.com/kb/SP659",
+      "verify_marker": "Late 2012",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i7-3615QM",
+          "ghz": 2.3,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-3720QM",
+          "ghz": 2.6,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "HDD 5400rpm (SSD/Fusion 选配)"
+    },
+    {
+      "model_name": "Mac mini (Late 2014)",
+      "model_identifier": "Macmini7,1",
+      "release_year": 2014,
+      "family": "Mac mini",
+      "cpu_model": "Intel Core i5-4260U (1.4GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 16,
+      "ram_type": "soldered LPDDR3-1600",
+      "ram_slots": 0,
+      "storage_interface": "SATA + proprietary-AHCI (PCIe)",
+      "nvme_bootable": "firmware_update_required",
+      "max_macos": "macOS Monterey 12",
+      "apple_spec_url": "https://support.apple.com/kb/SP710",
+      "verify_marker": "Late 2014",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-4260U",
+          "ghz": 1.4,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-4278U",
+          "ghz": 2.6,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-4308U",
+          "ghz": 2.8,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-4578U",
+          "ghz": 3.0,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "HDD 5400rpm (Fusion/SSD 选配)"
+    },
+    {
+      "model_name": "Mac mini (2018)",
+      "model_identifier": "Macmini8,1",
+      "release_year": 2018,
+      "family": "Mac mini",
+      "cpu_model": "Intel Core i3-8100B (3.6GHz 4核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 64,
+      "ram_type": "DDR4-2666 SO-DIMM",
+      "ram_slots": 2,
+      "storage_interface": "soldered-NVMe (T2)",
+      "nvme_bootable": "no",
+      "max_macos": "macOS Sequoia 15",
+      "apple_spec_url": "https://support.apple.com/kb/SP782",
+      "verify_marker": "Mac mini (2018)",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i3-8100B",
+          "ghz": 3.6,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-8500B",
+          "ghz": 3.0,
+          "cores": 6,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-8700B",
+          "ghz": 3.2,
+          "cores": 6,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "iMac (27-inch, Mid 2011)",
+      "model_identifier": "iMac12,2",
+      "release_year": 2011,
+      "family": "iMac",
+      "cpu_model": "Intel Core i5-2500S (2.7GHz 4核)",
+      "cpu_socket": "LGA1155",
+      "official_max_ram_gb": 16,
+      "ram_type": "DDR3-1333 SO-DIMM",
+      "ram_slots": 4,
+      "storage_interface": "SATA",
+      "nvme_bootable": "no",
+      "max_macos": "macOS High Sierra 10.13",
+      "apple_spec_url": "https://support.apple.com/kb/SP689",
+      "verify_marker": "27-inch, Mid 2011",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-2500S",
+          "ghz": 2.7,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-2400",
+          "ghz": 3.1,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-2600",
+          "ghz": 3.4,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "HDD 7200rpm (SSD 选配)"
+    },
+    {
+      "model_name": "iMac (27-inch, Late 2012)",
+      "model_identifier": "iMac13,2",
+      "release_year": 2012,
+      "family": "iMac",
+      "cpu_model": "Intel Core i5-3470S (2.9GHz 4核)",
+      "cpu_socket": "LGA1155",
+      "official_max_ram_gb": 32,
+      "ram_type": "DDR3-1600 SO-DIMM",
+      "ram_slots": 4,
+      "storage_interface": "SATA + proprietary blade (Fusion)",
+      "nvme_bootable": "no",
+      "max_macos": "macOS Catalina 10.15",
+      "apple_spec_url": "https://support.apple.com/kb/SP667",
+      "verify_marker": "27-inch, Late 2012",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-3470S",
+          "ghz": 2.9,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-3470",
+          "ghz": 3.2,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-3770",
+          "ghz": 3.4,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "HDD 7200rpm (Fusion/SSD 选配)"
+    },
+    {
+      "model_name": "iMac (27-inch, Late 2013)",
+      "model_identifier": "iMac14,2",
+      "release_year": 2013,
+      "family": "iMac",
+      "cpu_model": "Intel Core i5-4570 (3.2GHz 4核)",
+      "cpu_socket": "LGA1150",
+      "official_max_ram_gb": 32,
+      "ram_type": "DDR3-1600 SO-DIMM",
+      "ram_slots": 4,
+      "storage_interface": "SATA + proprietary-AHCI blade",
+      "nvme_bootable": "firmware_update_required",
+      "max_macos": "macOS Catalina 10.15",
+      "apple_spec_url": "https://support.apple.com/kb/SP688",
+      "verify_marker": "27-inch, Late 2013",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-4570",
+          "ghz": 3.2,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-4670",
+          "ghz": 3.4,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-4771",
+          "ghz": 3.5,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "HDD 7200rpm (Fusion/SSD 选配)"
+    },
+    {
+      "model_name": "iMac (Retina 5K, 27-inch, Late 2015)",
+      "model_identifier": "iMac17,1",
+      "release_year": 2015,
+      "family": "iMac",
+      "cpu_model": "Intel Core i5-6500 (3.2GHz 4核)",
+      "cpu_socket": "LGA1151",
+      "official_max_ram_gb": 32,
+      "ram_type": "DDR3-1867 SO-DIMM",
+      "ram_slots": 4,
+      "storage_interface": "SATA + proprietary-AHCI blade",
+      "nvme_bootable": "firmware_update_required",
+      "max_macos": "macOS Monterey 12",
+      "apple_spec_url": "https://support.apple.com/kb/SP731",
+      "verify_marker": "Retina 5K, 27-inch, Late 2015",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-6500",
+          "ghz": 3.2,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-6600",
+          "ghz": 3.3,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-6700K",
+          "ghz": 4.0,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "HDD/Fusion (SSD 选配)"
+    },
+    {
+      "model_name": "iMac (Retina 5K, 27-inch, 2017)",
+      "model_identifier": "iMac18,3",
+      "release_year": 2017,
+      "family": "iMac",
+      "cpu_model": "Intel Core i5-7500 (3.4GHz 4核)",
+      "cpu_socket": "LGA1151",
+      "official_max_ram_gb": 64,
+      "ram_type": "DDR4-2400 SO-DIMM",
+      "ram_slots": 4,
+      "storage_interface": "SATA + proprietary-NVMe blade",
+      "nvme_bootable": "native",
+      "max_macos": "macOS Ventura 13",
+      "apple_spec_url": "https://support.apple.com/kb/SP760",
+      "verify_marker": "Retina 5K, 27-inch, 2017",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-7500",
+          "ghz": 3.4,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-7600",
+          "ghz": 3.5,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-7600K",
+          "ghz": 3.8,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-7700K",
+          "ghz": 4.2,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "Fusion (SSD 选配)"
+    },
+    {
+      "model_name": "iMac (Retina 5K, 27-inch, 2019)",
+      "model_identifier": "iMac19,1",
+      "release_year": 2019,
+      "family": "iMac",
+      "cpu_model": "Intel Core i5-8500 (3.0GHz 6核)",
+      "cpu_socket": "LGA1151",
+      "official_max_ram_gb": 64,
+      "ram_type": "DDR4-2666 SO-DIMM",
+      "ram_slots": 4,
+      "storage_interface": "SATA + proprietary-NVMe blade",
+      "nvme_bootable": "native",
+      "max_macos": "macOS Sequoia 15",
+      "apple_spec_url": "https://support.apple.com/kb/SP790",
+      "verify_marker": "Retina 5K, 27-inch, 2019",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-8500",
+          "ghz": 3.0,
+          "cores": 6,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-8600",
+          "ghz": 3.1,
+          "cores": 6,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-9600K",
+          "ghz": 3.7,
+          "cores": 6,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i9-9900K",
+          "ghz": 3.6,
+          "cores": 8,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "Fusion (SSD 选配)"
+    },
+    {
+      "model_name": "iMac (Retina 5K, 27-inch, 2020)",
+      "model_identifier": "iMac20,1",
+      "release_year": 2020,
+      "family": "iMac",
+      "cpu_model": "Intel Core i5-10500 (3.1GHz 6核)",
+      "cpu_socket": null,
+      "official_max_ram_gb": 128,
+      "ram_type": "DDR4-2666 SO-DIMM",
+      "ram_slots": 4,
+      "storage_interface": "soldered-NVMe (T2)",
+      "nvme_bootable": "no",
+      "max_macos": "macOS Tahoe 26",
+      "apple_spec_url": "https://support.apple.com/kb/SP821",
+      "verify_marker": "Retina 5K, 27-inch, 2020",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-10500",
+          "ghz": 3.1,
+          "cores": 6,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-10600",
+          "ghz": 3.3,
+          "cores": 6,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-10700K",
+          "ghz": 3.8,
+          "cores": 8,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i9-10910",
+          "ghz": 3.6,
+          "cores": 10,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "Mac Pro (Mid 2010)",
+      "model_identifier": "MacPro5,1",
+      "release_year": 2010,
+      "family": "Mac Pro",
+      "cpu_model": "Intel Xeon W3530 (2.8GHz 4核)",
+      "cpu_socket": "LGA1366",
+      "official_max_ram_gb": 64,
+      "ram_type": "DDR3-1066/1333 ECC UDIMM (单CPU 4槽至32GB, 双CPU 8槽至64GB)",
+      "ram_slots": 8,
+      "storage_interface": "SATA + PCIe-slot",
+      "nvme_bootable": "firmware_update_required",
+      "max_macos": "macOS Mojave 10.14",
+      "apple_spec_url": "https://support.apple.com/kb/SP589",
+      "verify_marker": "Mid 2010",
+      "cpu_options": [
+        {
+          "cpu": "Intel Xeon W3530",
+          "ghz": 2.8,
+          "cores": 4,
+          "config": "standard",
+          "notes": "单路四核"
+        },
+        {
+          "cpu": "Intel Xeon W3565",
+          "ghz": 3.2,
+          "cores": 4,
+          "config": "configurable",
+          "notes": "单路四核"
+        },
+        {
+          "cpu": "Intel Xeon W3680",
+          "ghz": 3.33,
+          "cores": 6,
+          "config": "configurable",
+          "notes": "单路六核"
+        },
+        {
+          "cpu": "2× Intel Xeon E5620",
+          "ghz": 2.4,
+          "cores": 8,
+          "config": "standard",
+          "notes": "双路, 2×4核"
+        },
+        {
+          "cpu": "2× Intel Xeon X5650",
+          "ghz": 2.66,
+          "cores": 12,
+          "config": "configurable",
+          "notes": "双路, 2×6核"
+        },
+        {
+          "cpu": "2× Intel Xeon X5670",
+          "ghz": 2.93,
+          "cores": 12,
+          "config": "configurable",
+          "notes": "双路, 2×6核"
+        }
+      ],
+      "stock_storage": "HDD 7200rpm"
+    },
+    {
+      "model_name": "Mac Pro (Late 2013)",
+      "model_identifier": "MacPro6,1",
+      "release_year": 2013,
+      "family": "Mac Pro",
+      "cpu_model": "Intel Xeon E5-1620 v2 (3.7GHz 4核)",
+      "cpu_socket": "LGA2011",
+      "official_max_ram_gb": 64,
+      "ram_type": "DDR3-1866 ECC RDIMM",
+      "ram_slots": 4,
+      "storage_interface": "proprietary-AHCI blade (PCIe)",
+      "nvme_bootable": "firmware_update_required",
+      "max_macos": "macOS Monterey 12",
+      "apple_spec_url": "https://support.apple.com/kb/SP697",
+      "verify_marker": "Late 2013",
+      "cpu_options": [
+        {
+          "cpu": "Intel Xeon E5-1620 v2",
+          "ghz": 3.7,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Xeon E5-1650 v2",
+          "ghz": 3.5,
+          "cores": 6,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Xeon E5-1680 v2",
+          "ghz": 3.0,
+          "cores": 8,
+          "config": "configurable",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Xeon E5-2697 v2",
+          "ghz": 2.7,
+          "cores": 12,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "MacBook Pro (Retina, 15-inch, Mid 2015)",
+      "model_identifier": "MacBookPro11,5",
+      "release_year": 2015,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i7-4870HQ (2.5GHz 4核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 16,
+      "ram_type": "soldered DDR3L-1600",
+      "ram_slots": 0,
+      "storage_interface": "proprietary-AHCI (PCIe 3.0 x4)",
+      "nvme_bootable": "firmware_update_required",
+      "max_macos": "macOS Monterey 12",
+      "apple_spec_url": "https://support.apple.com/kb/SP719",
+      "verify_marker": "Retina, 15-inch, Mid 2015",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i7-4870HQ",
+          "ghz": 2.5,
+          "cores": 4,
+          "config": "standard",
+          "notes": "带 AMD R9 M370X 独显 (与 11,4 的区别)"
+        },
+        {
+          "cpu": "Intel Core i7-4980HQ",
+          "ghz": 2.8,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "MacBook Pro (Retina, 15-inch, Mid 2012)",
+      "model_identifier": "MacBookPro10,1",
+      "release_year": 2012,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i7-3615QM (2.3GHz 4核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 16,
+      "ram_type": "soldered DDR3L-1600",
+      "ram_slots": 0,
+      "storage_interface": "proprietary-SATA blade",
+      "nvme_bootable": "no",
+      "max_macos": "macOS Catalina 10.15",
+      "apple_spec_url": "https://support.apple.com/kb/SP653",
+      "verify_marker": "Retina, 15-inch, Mid 2012",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i7-3615QM",
+          "ghz": 2.3,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-3720QM",
+          "ghz": 2.6,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-3820QM",
+          "ghz": 2.7,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "MacBook Air (13-inch, Mid 2012)",
+      "model_identifier": "MacBookAir5,2",
+      "release_year": 2012,
+      "family": "MacBook Air",
+      "cpu_model": "Intel Core i5-3427U (1.8GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 8,
+      "ram_type": "soldered DDR3L-1600",
+      "ram_slots": 0,
+      "storage_interface": "proprietary-SATA blade",
+      "nvme_bootable": "no",
+      "max_macos": "macOS Catalina 10.15",
+      "apple_spec_url": "https://support.apple.com/kb/SP670",
+      "verify_marker": "13-inch, Mid 2012",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-3427U",
+          "ghz": 1.8,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-3667U",
+          "ghz": 2.0,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "iMac (21.5-inch, Mid 2011)",
+      "model_identifier": "iMac12,1",
+      "release_year": 2011,
+      "family": "iMac",
+      "cpu_model": "Intel Core i5-2400S (2.5GHz 4核)",
+      "cpu_socket": "LGA1155",
+      "official_max_ram_gb": 16,
+      "ram_type": "DDR3-1333 SO-DIMM",
+      "ram_slots": 4,
+      "storage_interface": "SATA",
+      "nvme_bootable": "no",
+      "max_macos": "macOS High Sierra 10.13",
+      "apple_spec_url": "https://support.apple.com/kb/SP623",
+      "verify_marker": "21.5-inch, Mid 2011",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-2400S",
+          "ghz": 2.5,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-2500S",
+          "ghz": 2.7,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-2600S",
+          "ghz": 2.8,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "HDD 7200rpm"
+    },
+    {
+      "model_name": "MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)",
+      "model_identifier": "MacBookPro14,1",
+      "release_year": 2017,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i5-7360U (2.3GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 16,
+      "ram_type": "soldered LPDDR3-2133",
+      "ram_slots": 0,
+      "storage_interface": "proprietary-NVMe (可拆卸模块)",
+      "nvme_bootable": "native",
+      "max_macos": "macOS Ventura 13",
+      "apple_spec_url": "https://support.apple.com/kb/SP754",
+      "verify_marker": "13-inch, 2017, Two Thunderbolt 3 ports",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-7360U",
+          "ghz": 2.3,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-7660U",
+          "ghz": 2.5,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    },
+    {
+      "model_name": "Mac Pro (2019)",
+      "model_identifier": "MacPro7,1",
+      "release_year": 2019,
+      "family": "Mac Pro",
+      "cpu_model": "Intel Xeon W-3223 (3.5GHz 8核)",
+      "cpu_socket": "LGA3647",
+      "official_max_ram_gb": 1536,
+      "ram_type": "DDR4-2933 ECC R/LRDIMM (12 槽; 1.5TB 需 24/28 核)",
+      "ram_slots": 12,
+      "storage_interface": "proprietary-NVMe (T2 配对) + PCIe-slot",
+      "nvme_bootable": "native",
+      "max_macos": "macOS Tahoe 26",
+      "apple_spec_url": "https://support.apple.com/kb/SP797",
+      "verify_marker": "Mac Pro (2019)",
+      "cpu_options": [
+        {
+          "cpu": "Intel Xeon W-3223",
+          "ghz": 3.5,
+          "cores": 8,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Xeon W-3235",
+          "ghz": 3.3,
+          "cores": 12,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Xeon W-3245",
+          "ghz": 3.2,
+          "cores": 16,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Xeon W-3265M",
+          "ghz": 2.7,
+          "cores": 24,
+          "config": "configurable",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Xeon W-3275M",
+          "ghz": 2.5,
+          "cores": 28,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "stock_storage": "SSD"
+    }
+  ]
+}
