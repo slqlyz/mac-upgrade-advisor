@@ -1,0 +1,98 @@
+[
+ {
+  "target": "Macmini8,1",
+  "score": 4,
+  "title": "把i9-9980hk安排到mac mini里面，看看是怎么撞墙的，哈哈 - Chiphell - 分享与交流用户体验 - Powered by ...",
+  "url": "https://www.chiphell.com/forum.php?mod=viewthread&amp;action=printable&amp;tid=2629222",
+  "query": "mac mini 2018 CPU swap 9980HK BGA 改装",
+  "status": "已入库(9980HK)"
+ },
+ {
+  "target": "Macmini8,1",
+  "score": 4,
+  "title": "Someone upgraded a 2018 mini with an 8-core i9-9980HK",
+  "url": "https://lowendmac.com/2025/someone-upgraded-a-2018-mini-with-an-8-core-i9-9980hk/",
+  "query": "mac mini 2018 CPU swap 9980HK BGA 改装",
+  "status": "已入库(9980HK)"
+ },
+ {
+  "target": "Macmini8,1",
+  "score": 4,
+  "title": "Maxing out the mini - 1,1/2,1 Mac mini CPU Upgrade Guide",
+  "url": "https://forums.macrumors.com/threads/maxing-out-the-mini-1-1-2-1-mac-mini-cpu-upgrade-guide.2372544/",
+  "query": "mac mini 2018 CPU swap 9980HK BGA 改装",
+  "status": "暂存(mini 2006/07 未收录, 待扩机型)"
+ },
+ {
+  "target": "Macmini8,1",
+  "score": 3,
+  "title": "把i9-9980hk安排到mac mini里面，看看是怎么撞墙的，哈哈 - 电脑讨论 (新) - Chiphell - 分享与交流用户体验",
+  "url": "https://www.chiphell.com/thread-2629222-1-1.html",
+  "query": "mac mini 2018 CPU swap 9980HK BGA 改装",
+  "status": "已入库(9980HK)"
+ },
+ {
+  "target": "Macmini8,1",
+  "score": 4,
+  "title": "Mac Mini Upgrade Advice : r/macmini - Reddit",
+  "url": "https://www.reddit.com/r/macmini/comments/18kbfqk/mac_mini_upgrade_advice/",
+  "query": "mac mini 2018 换 i9 9980HK chiphell",
+  "status": "噪音(泛泛求购帖), 弃"
+ },
+ {
+  "target": "MacBookPro8,3",
+  "score": 4,
+  "title": "MacBookPro8,3 (2011 17&quot;) slow boot and RAM initialization failure - Reddit",
+  "url": "https://www.reddit.com/r/coreboot/comments/11p29px/macbookpro83_2011_17_slow_boot_and_ram/",
+  "query": "macbook pro 17 2011 ivy bridge coreboot hybrid mod",
+  "status": "暂存(17吋 CoreBoot 技术佐证, 待 MacBookPro8,3 入库后作补充来源)"
+ },
+ {
+  "target": "MacBookPro8,3",
+  "score": 3,
+  "title": "I fixed a 2011 17&quot; MacBook pro : r/mac - Reddit",
+  "url": "https://www.reddit.com/r/mac/comments/11lwd0m/i_fixed_a_2011_17_macbook_pro/",
+  "query": "macbook pro 17 2011 ivy bridge coreboot hybrid mod",
+  "status": "暂存(疑为 Radeongate 修复记, 待 8,3 入库评估)"
+ },
+ {
+  "target": "MacBookPro8,3",
+  "score": 3,
+  "title": "Ultimate &quot;Hybrid&quot; 2011/2012 17&quot; MacBook Pro - Low End Mac",
+  "url": "https://lowendmac.com/2024/ultimate-hybrid-2011-2012-17-macbook-pro/",
+  "query": "macbook pro 17 2011 ivy bridge coreboot hybrid mod",
+  "status": "已采用(BGA 约束+判定机制锚点)"
+ },
+ {
+  "target": "iMacPro1,1",
+  "score": 4,
+  "title": "Anyone done a CPU upgrade for an iMac Pro? - MacRumors Forums",
+  "url": "https://forums.macrumors.com/threads/anyone-done-a-cpu-upgrade-for-an-imac-pro.2325353/",
+  "query": "imac pro 2017 xeon CPU upgrade swap W-2191B",
+  "status": "已入库(iMac Pro 换 CPU)"
+ },
+ {
+  "target": "iMacPro1,1",
+  "score": 3,
+  "title": "Need guidance with upgrading iMac Pro CPU : r/mac - Reddit",
+  "url": "https://www.reddit.com/r/mac/comments/1b5z6at/need_guidance_with_upgrading_imac_pro_cpu/",
+  "query": "imac pro 2017 xeon CPU upgrade swap W-2191B",
+  "status": "已入库(第二来源)"
+ },
+ {
+  "target": "iMacPro1,1",
+  "score": 3,
+  "title": "Need guidance with upgrading iMac Pro CPU : r/iMac - Reddit",
+  "url": "https://www.reddit.com/r/iMac/comments/1b5z91y/need_guidance_with_upgrading_imac_pro_cpu/",
+  "query": "imac pro 2017 xeon CPU upgrade swap W-2191B",
+  "status": "重复(同10), 弃"
+ },
+ {
+  "target": "*",
+  "score": 3,
+  "title": "才知道，不但mac mini M4可以扩容，刚刚新出的macbook air M4也可以扩容 - 电脑讨论 (新) - Chiphell ...",
+  "url": "https://www.chiphell.com/thread-2680873-1-1.html",
+  "query": "macbook 内存 颗粒 加焊 扩容 16g 32g",
+  "status": "出范围(Apple Silicon), 弃"
+ }
+]

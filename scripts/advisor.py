@@ -52,14 +52,19 @@ BGA_SWAP_ANCHORS = [
 ]
 
 
-def bga_quad_swap_applicable(model, plat):
-    """同代 BGA CPU 换装判定: SNB/IVB 平台 + BGA 封装 CPU。
-    依据: M 系与 QE 系共用 BGA1023 封装, 且 Apple 未从固件删除 QE 微码;
-    跨代 (SNB 板上 IVB) 亦有实证但需 CoreBoot 换固件。"""
+def bga_quad_swap_applicable(model, plat, cpu_options):
+    """同代 BGA 四核化判定: SNB/IVB 平台 + BGA1023 封装 (即基础款为双核 M/U 系)。
+    依据: 双核 M/U 系与 QE 四核共用 BGA1023, 且 Apple 未删 QE 微码;
+    15/17 吋的 QM 四核是 BGA1224 — 本就四核且封装不同, 不适用;
+    跨代 (SNB 板上 IVB) 需 CoreBoot 换固件, 另行实证。"""
     if not (model["cpu_socket"] or "").startswith("BGA") or not plat:
         return False
     arch = plat.get("cpu_microarch") or ""
-    return "Sandy Bridge" in arch or "Ivy Bridge" in arch
+    if not ("Sandy Bridge" in arch or "Ivy Bridge" in arch):
+        return False
+    std = [o for o in cpu_options if o["config_type"] == "standard"]
+    base = min(std, key=lambda o: (o["cores"], o["ghz"])) if std else None
+    return bool(base and base["cores"] == 2)  # 双核基础款 = BGA1023
 
 
 def ram_reball_floor(model):
@@ -87,7 +92,8 @@ def wild_extras(ctx):
            for r in ctx["compat"]):
         return True
     m = ctx["model"]
-    if bga_quad_swap_applicable(m, ctx.get("platform")) or ram_reball_applicable(m):
+    if (bga_quad_swap_applicable(m, ctx.get("platform"), ctx.get("cpu_options", []))
+            or ram_reball_applicable(m)):
         return True
     if any(p["port_type"] == "pcie_slot" for p in ctx["ports"]):
         ship_key = m["release_year"] - 2004
@@ -525,14 +531,14 @@ def _derived_items(ctx, usage):
     if usage == "野路子":
         have_unorthodox = {r["category"] for r in ctx["compat"]
                            if (r.get("path_class") or "standard") == "unorthodox"}
-        if bga_quad_swap_applicable(m, plat) and "cpu" not in have_unorthodox:
+        if bga_quad_swap_applicable(m, plat, ctx["cpu_options"]) and "cpu" not in have_unorthodox:
             arch = plat.get("cpu_microarch") or ""
             chips = ("i7-2715QE 等" if "Sandy" in arch
-                     else "i7-3615QE ($26 级白菜) / 3612QE (35W 散热更优) / 更高档 QM")
+                     else "i7-3615QE ($26 级白菜) / 3612QE (35W 散热更优)")
             items.append({
                 "category": "cpu", "wild_exclusive": True,
-                "title": f"BGA CPU 板级换装可行 — 同代同封装 (可选 {chips})",
-                "notes": "判定依据: SNB/IVB 的 M 系与 QE 系共用 BGA1023 封装, 且 Apple 未删 QE 微码 "
+                "title": f"BGA 四核化可行 — 双核换 QE 同封装 (可选 {chips})",
+                "notes": "判定依据: 本机基础款为双核 (BGA1023), 与 QE 四核同封装且 Apple 未删 QE 微码 "
                          "(实证锚点: 2012 Air 四核化 / MBP 13吋 2012 四核化); 跨代 (SNB 板上 IVB CPU) "
                          "亦有实证但需 CoreBoot 换固件 (17吋 2011 杂交); 专业改装级, 需 BGA 返修台; "
                          "散热按原 TDP 设计, 45W 芯片持续负载会降频",
@@ -732,7 +738,8 @@ def advise(identifier, usage, risk, target=None, db_path=DB_PATH):
     # 任何风险级可见; 同类实证已在列时让位, 避免重复
     m = ctx["model"]
     if (m["ram_slots"] > 0 and weights.get("ram", 0) >= WEIGHT_THRESHOLD
-            and not any(r["category"] == "ram" for r in recs)):
+            and not any(r["category"] == "ram" and not r.get("wild_exclusive")
+                        for r in recs)):
         if usage == "轻度日用" and m["official_max_ram_gb"] > 16:
             ram_title = (f"内存按官方规格加装即可 (轻度日用 16GB+ 够; "
                          f"官方上限 {m['official_max_ram_gb']}GB, {m['ram_type']})")
@@ -752,7 +759,8 @@ def advise(identifier, usage, risk, target=None, db_path=DB_PATH):
         })
     if ((m["cpu_socket"] or "").startswith("LGA")
             and weights.get("cpu", 0) >= WEIGHT_THRESHOLD
-            and not any(r["category"] == "cpu" for r in recs)
+            and not any(r["category"] == "cpu" and not r.get("wild_exclusive")
+                        for r in recs)
             and len(ctx["cpu_options"]) > 1):
         t = max(ctx["cpu_options"], key=lambda o: (o["cores"], o["ghz"]))
         recs.append({
@@ -773,7 +781,8 @@ def advise(identifier, usage, risk, target=None, db_path=DB_PATH):
     if (risk != "official"
             and ("HDD" in stock or "Fusion" in stock)
             and any(p["port_type"] == "sata" for p in ctx["ports"])
-            and not any(r["category"] == "ssd" for r in recs)
+            and not any(r["category"] == "ssd" and not r.get("wild_exclusive")
+                        for r in recs)
             and weights.get("ssd", 0) >= WEIGHT_THRESHOLD):
         recs.append({
             "layer": "derived", "category": "ssd",

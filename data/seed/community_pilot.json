@@ -288,6 +288,54 @@
       "speed_spec": null,
       "requires_adapter": 0,
       "notes": "焊接内存机型的唯一扩容路径: 拆焊原颗粒换更大容量; 深圳维修圈常规操作"
+    },
+    {
+      "key": "i9-9980hk",
+      "category": "cpu",
+      "manufacturer": "Intel",
+      "part_model": "Core i9-9980HK",
+      "is_generic": 0,
+      "interface": "BGA1440 (板级焊接)",
+      "capacity_gb": null,
+      "speed_spec": "2.4GHz 8核16线程 (Coffee Lake Refresh-H)",
+      "requires_adapter": 0,
+      "notes": "移动端 Coffee Lake 顶级芯; 与 mini 2018 的 B 系桌面芯同为 BGA1440 封装"
+    },
+    {
+      "key": "xeon-w2191b",
+      "category": "cpu",
+      "manufacturer": "Intel",
+      "part_model": "Xeon W-2191B",
+      "is_generic": 0,
+      "interface": "LGA2066",
+      "capacity_gb": null,
+      "speed_spec": "2.3GHz 18核 (Skylake-W)",
+      "requires_adapter": 0,
+      "notes": "iMac Pro 出厂顶配同款; Intel 零售等效型号为 W-2195 (社区亦有用其替代)"
+    },
+    {
+      "key": "ivb-hybrid-mod",
+      "category": "cpu",
+      "manufacturer": "Intel",
+      "part_model": "Core i7-3720QM (跨代杂交)",
+      "is_generic": 0,
+      "interface": "BGA (跨代换焊) + CoreBoot 固件",
+      "capacity_gb": null,
+      "speed_spec": "2.6GHz 4核 (Ivy Bridge, 理论至 3840QM)",
+      "requires_adapter": 0,
+      "notes": "SNB 主板换焊 IVB CPU: 芯片更薄需垫片工艺, 且必须换 CoreBoot 自定义固件 (原厂固件无跨代微码)"
+    },
+    {
+      "key": "radeongate-dgpu",
+      "category": "gpu",
+      "manufacturer": "AMD",
+      "part_model": "Radeon HD 6490M/6750M/6770M (原装独显)",
+      "is_generic": 0,
+      "interface": "板载独显 (原装)",
+      "capacity_gb": null,
+      "speed_spec": null,
+      "requires_adapter": 0,
+      "notes": "2011 15/17 吋原装独显, Radeongate 主角"
     }
   ],
   "compatibility": [
@@ -753,6 +801,53 @@
       "result": "works",
       "max_working_capacity_gb": 16,
       "notes": "焊接内存加倍: 原装焊死上限 8GB, 颗粒加焊至 16GB 实装成功; 注意 OP 评论: 2010/2011 Air (A1369/A1370) 部分主板缺高容量数据线, 只能到 4GB, 此法不通用于更老款"
+    },
+    {
+      "model_identifier": "Macmini8,1",
+      "component_key": "i9-9980hk",
+      "confidence_level": "community_tested",
+      "path_class": "unorthodox",
+      "source_url": "https://www.chiphell.com/thread-2629222-1-1.html",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://lowendmac.com/2025/someone-upgraded-a-2018-mini-with-an-8-core-i9-9980hk/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": null,
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": null,
+      "notes": "BGA 拆焊换芯 (专业改装级): i3/i5 板换 8核16线程 9980HK, Chiphell 实装帖 (标题自述『看看是怎么撞墙的』— 撞的是散热/功耗墙, 持续负载受限) + Low End Mac 2025 报道; Chiphell 有反爬, 来源需人工点开; 中国维修圈此类改装有成品流通 (闲鱼可见)"
+    },
+    {
+      "model_identifier": "iMacPro1,1",
+      "component_key": "xeon-w2191b",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/anyone-done-a-cpu-upgrade-for-an-imac-pro.2325353/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://www.reddit.com/r/mac/comments/1b5z6at/need_guidance_with_upgrading_imac_pro_cpu/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": null,
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": null,
+      "notes": "LGA2066 插座可插拔, 基础款 8 核可换至 18 核顶配 (零售 W-2195 等效可用); 难点在拆解而非兼容: 需拆屏 (胶封) 且散热器重装要求高, 建议专业操作"
+    },
+    {
+      "model_identifier": "MacBookPro8,3",
+      "component_key": "ivb-hybrid-mod",
+      "confidence_level": "community_tested",
+      "path_class": "unorthodox",
+      "source_url": "https://lowendmac.com/2024/ultimate-hybrid-2011-2012-17-macbook-pro/",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://www.reddit.com/r/coreboot/comments/11p29px/macbookpro83_2011_17_slow_boot_and_ram/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": null,
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": null,
+      "notes": "极端野路子 (dosdude1 出品): 2011 17吋 板换 Ivy CPU 造出 Apple 从未卖过的『2012 款 17 吋』; 必须 CoreBoot 换固件 + 特定内存组合 (PC3-8500 下槽 + PC3-12800 上槽); Reddit r/coreboot 有同机型调试记录佐证; 顺带绕开 Radeongate (强制核显)"
     }
   ],
   "known_conflicts": [
@@ -816,6 +911,38 @@
         "https://forums.macrumors.com/threads/new-high-end-15-macbook-pros-optical-drive-sata-port-still-only-3gbps.1255764/"
       ],
       "corroboration_count": 2
+    },
+    {
+      "model_identifier": "MacBookPro8,2",
+      "component_a_key": "radeongate-dgpu",
+      "component_b_key": null,
+      "severity": "no_boot",
+      "description": "Radeongate: 2011 款 15/17 吋独显大规模故障 (过热/焊点/芯片缺陷), 表现为花屏、无画面、反复重启直至无法启动; Apple 曾迫于集体诉讼开设 Repair Extension Program (2015-2016, 已过期)",
+      "workaround": "社区方案: 禁用独显强制核显 (NVRAM/gfxCardStatus/dosdude1 dGPU disable); 返修台加焊只是暂时续命; 购买二手 2011 15/17 吋前务必检查独显",
+      "affected_macos_versions": "全版本 (硬件缺陷)",
+      "source_url": "https://www.macrumors.com/2017/05/20/apple-ends-2011-macbook-pro-repair-program/",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/macbook-pro-repair-extension-program-for-video-issues.2030329/",
+        "https://www.jeffgeerling.com/blog/2017/fixing-2011-macbook-pro-booting-grey-screen-amd-radeon-video-glitch/"
+      ],
+      "corroboration_count": 3
+    },
+    {
+      "model_identifier": "MacBookPro8,3",
+      "component_a_key": "radeongate-dgpu",
+      "component_b_key": null,
+      "severity": "no_boot",
+      "description": "Radeongate: 2011 款 15/17 吋独显大规模故障 (过热/焊点/芯片缺陷), 表现为花屏、无画面、反复重启直至无法启动; Apple 曾迫于集体诉讼开设 Repair Extension Program (2015-2016, 已过期)",
+      "workaround": "社区方案: 禁用独显强制核显 (NVRAM/gfxCardStatus/dosdude1 dGPU disable); 返修台加焊只是暂时续命; 购买二手 2011 15/17 吋前务必检查独显",
+      "affected_macos_versions": "全版本 (硬件缺陷)",
+      "source_url": "https://www.macrumors.com/2017/05/20/apple-ends-2011-macbook-pro-repair-program/",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/macbook-pro-repair-extension-program-for-video-issues.2030329/",
+        "https://www.jeffgeerling.com/blog/2017/fixing-2011-macbook-pro-booting-grey-screen-amd-radeon-video-glitch/"
+      ],
+      "corroboration_count": 3
     }
   ]
 }

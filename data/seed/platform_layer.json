@@ -47,9 +47,10 @@
       "models": [
         "Macmini6,2",
         "MacBookPro9,2",
-        "MacBookPro10,1"
+        "MacBookPro10,1",
+        "MacBookPro9,1"
       ],
-      "notes": "DDR3 世代单条现实最大 8GB; 16GB DDR3 SO-DIMM 到 Broadwell/Skylake 世代才现实存在",
+      "notes": "DDR3 世代单条现实最大 8GB; 16GB DDR3 SO-DIMM 到 Broadwell/Skylake 世代才现实存在; 封装分裂同 Sandy 移动: 双核=BGA1023 可换 QE, 四核 QM=BGA1224 不适用",
       "max_module_gb": 8
     },
     {
@@ -85,7 +86,8 @@
       "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=i5-4250U",
       "models": [
         "MacBookAir6,2",
-        "Macmini7,1"
+        "Macmini7,1",
+        "iMac14,4"
       ],
       "notes": "内存焊接, 控制器上限只对出厂配置有意义"
     },
@@ -191,7 +193,8 @@
       "controller_max_ram_gb": 128,
       "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=i5-8500",
       "models": [
-        "iMac19,1"
+        "iMac19,1",
+        "iMac19,2"
       ],
       "notes": "官方 64GB vs 控制器 128GB — 社区 128GB (4×32GB) 有实测",
       "max_module_gb": 32
@@ -226,7 +229,8 @@
       "controller_max_ram_gb": 32,
       "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=i5-7360U",
       "models": [
-        "MacBookPro14,1"
+        "MacBookPro14,1",
+        "iMac18,1"
       ],
       "notes": "内存焊接, 控制器上限只对出厂配置有意义"
     },
@@ -253,9 +257,11 @@
         "MacBookPro8,1",
         "MacBookPro8,2",
         "Macmini5,2",
-        "MacBookAir4,2"
+        "MacBookAir4,2",
+        "MacBookPro8,3",
+        "Macmini5,1"
       ],
-      "notes": "标压移动双槽机型 2×8GB=16GB 为社区常规操作; MBA 2011 内存焊接不适用"
+      "notes": "封装分裂: 双核 M/U 系为 BGA1023 (13吋 MBP/Air/双核 mini) — 与 QE 四核同封装, 可换芯; 四核 QM 系为 BGA1224 (15/17吋, 2011 mini Server 的 2635QM 亦是) — 本就四核, 封装不同, QE 换装不适用; 标压双槽机型 2×8GB=16GB 为社区常规"
     },
     {
       "name": "Skylake-W (LGA2066)",
@@ -317,6 +323,56 @@
         "MacPro4,1"
       ],
       "notes": "Nehalem 世代仅认 8GB DIMM (16GB RDIMM 需 Westmere 内存控制器); 原生 4,1 固件无 Westmere 微码, X56xx 根本无法 POST — 上 Westmere/16GB 条/128GB 都必须先刷 5,1 固件 (见该机野路子); 原生固件双路上限 8×8=64GB"
+    },
+    {
+      "name": "Lynnfield/Clarkdale 桌面 (LGA1156)",
+      "cpu_microarch": "Nehalem 世代桌面 (Lynnfield 四核 / Clarkdale 双核)",
+      "memory_controller": "CPU 集成, 双通道 DDR3-1066/1333",
+      "controller_max_ram_gb": 16,
+      "max_module_gb": 8,
+      "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=i5-750",
+      "models": [
+        "iMac11,1",
+        "iMac11,3"
+      ],
+      "notes": "官方 16GB; 社区 4×8=32GB 在 2010 款有实测报告 (2009 款视固件); LGA1156 插槽 CPU 可换"
+    },
+    {
+      "name": "Crystal Well 桌面 R 系 (BGA)",
+      "cpu_microarch": "Haswell (Crystal Well R 系)",
+      "memory_controller": "CPU 集成, 双通道 DDR3-1600",
+      "controller_max_ram_gb": 32,
+      "max_module_gb": 8,
+      "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=i5-4570R",
+      "models": [
+        "iMac14,1"
+      ],
+      "notes": "R 后缀桌面芯为 BGA 焊接 (带 Iris Pro), 插槽逻辑不适用"
+    },
+    {
+      "name": "Broadwell 桌面 R 系 (BGA)",
+      "cpu_microarch": "Broadwell (R 系)",
+      "memory_controller": "CPU 集成, 双通道 LPDDR3-1867 (焊接)",
+      "controller_max_ram_gb": 32,
+      "max_module_gb": null,
+      "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=i5-5675R",
+      "models": [
+        "iMac16,2"
+      ],
+      "notes": "内存焊接, 控制器上限只对出厂配置有意义"
+    },
+    {
+      "name": "Penryn + NVIDIA MCP89 (Core 2)",
+      "cpu_microarch": "Penryn (Core 2 Duo)",
+      "memory_controller": "芯片组集成 (NVIDIA MCP89), 双通道 DDR3-1066",
+      "controller_max_ram_gb": 16,
+      "max_module_gb": 8,
+      "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=P8600",
+      "models": [
+        "Macmini4,1",
+        "MacBook7,1"
+      ],
+      "notes": "前 Nehalem 世代: 内存控制器在 NVIDIA MCP89 芯片组而非 CPU; 官方标 4/8GB, 实际支持单条 8GB 共 2×8=16GB (EveryMac 实测标注 'actually supports 16GB')"
     }
   ],
   "expansion_ports": [
@@ -1174,6 +1230,290 @@
           "notes": null
         }
       ]
+    },
+    {
+      "model": "MacBookPro8,3",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "optical_bay",
+          "spec": "SATA 光驱位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": "可装 caddy 加第二块盘"
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 1 (10Gbps)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model": "MacBookPro9,1",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "optical_bay",
+          "spec": "SATA 光驱位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": "可装 caddy 加第二块盘"
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 1 (10Gbps)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model": "iMac11,1",
+      "ports": [
+        {
+          "port_type": "mxm",
+          "spec": "MXM 3.0 Type B",
+          "count": 1,
+          "source_url": "https://everymac.com/systems/apple/imac/specs/imac-core-i5-2.7-27-inch-aluminum-mid-2011-thunderbolt-specs.html",
+          "notes": "2009-2011 iMac GPU 巨帖覆盖; 需刷 vBIOS"
+        },
+        {
+          "port_type": "sata",
+          "spec": "SATA 3.5\" 主硬盘位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": "换第三方盘温感风扇问题同 2011 款"
+        },
+        {
+          "port_type": "optical_bay",
+          "spec": "SATA 光驱位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": "可装 caddy 加第二块盘"
+        }
+      ]
+    },
+    {
+      "model": "iMac11,3",
+      "ports": [
+        {
+          "port_type": "mxm",
+          "spec": "MXM 3.0 Type B",
+          "count": 1,
+          "source_url": "https://everymac.com/systems/apple/imac/specs/imac-core-i5-2.7-27-inch-aluminum-mid-2011-thunderbolt-specs.html",
+          "notes": "2009-2011 iMac GPU 巨帖覆盖; 需刷 vBIOS"
+        },
+        {
+          "port_type": "sata",
+          "spec": "SATA 3.5\" 主硬盘位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": "换第三方盘温感风扇问题同 2011 款"
+        },
+        {
+          "port_type": "optical_bay",
+          "spec": "SATA 光驱位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": "可装 caddy 加第二块盘"
+        }
+      ]
+    },
+    {
+      "model": "iMac14,1",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 硬盘位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "apple_ssd_blade",
+          "spec": "Apple 专有 SATA 刀片槽 (Fusion)",
+          "count": 1,
+          "source_url": "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide",
+          "notes": null
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 1 (10Gbps)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model": "iMac14,4",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 硬盘位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "apple_ssd_blade",
+          "spec": "Apple 专有 PCIe AHCI 刀片槽",
+          "count": 1,
+          "source_url": "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide",
+          "notes": null
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 1 (10Gbps)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model": "iMac16,2",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 硬盘位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "apple_ssd_blade",
+          "spec": "Apple 专有 PCIe AHCI 刀片槽",
+          "count": 1,
+          "source_url": "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide",
+          "notes": null
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 2 (20Gbps)",
+          "count": 2,
+          "source_url": "$apple_spec",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model": "iMac18,1",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 硬盘位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "apple_ssd_blade",
+          "spec": "Apple 专有 PCIe NVMe 刀片槽",
+          "count": 1,
+          "source_url": "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide",
+          "notes": null
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 3 (40Gbps, USB-C)",
+          "count": 2,
+          "source_url": "$apple_spec",
+          "notes": "eGPU 官方支持路径"
+        }
+      ]
+    },
+    {
+      "model": "iMac19,2",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 硬盘位 (Fusion 配置)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "apple_ssd_blade",
+          "spec": "Apple 专有 PCIe NVMe 刀片槽",
+          "count": 1,
+          "source_url": "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide",
+          "notes": null
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 3 (40Gbps, USB-C)",
+          "count": 2,
+          "source_url": "$apple_spec",
+          "notes": "eGPU 官方支持路径"
+        }
+      ]
+    },
+    {
+      "model": "Macmini5,1",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 位",
+          "count": 2,
+          "source_url": "https://www.ifixit.com/Device/Mac_Mini_Mid_2011",
+          "notes": "第二位需排线套件"
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 1 (10Gbps)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model": "Macmini4,1",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 位",
+          "count": 2,
+          "source_url": "https://www.ifixit.com/Device/Mac_Mini_Mid_2010",
+          "notes": "第二位需 Server 版排线"
+        }
+      ]
+    },
+    {
+      "model": "MacBook7,1",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "optical_bay",
+          "spec": "SATA 光驱位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": "可装 caddy 加第二块盘"
+        }
+      ]
     }
   ],
   "hw_constraints": [
@@ -1231,16 +1571,18 @@
     {
       "scope": "global",
       "constraint_type": "other",
-      "description": "BGA 焊接机型的根本分级: CPU/内存颗粒与逻辑板焊死, 常规手段不可升级; 板级返修属专业改装级, 已有多机实证 — 同代同封装换装: 2012 Air 上四核 3615QE + 内存颗粒加焊 16GB (Reddit), MBP 13吋 2012 四核化 (MacRumors); 跨代换装: 17吋 2011 板上 Ivy CPU, 需 CoreBoot 自定义固件 (lowendmac/dosdude1)。该类操作理论上可推广到全部 SNB/IVB BGA 机型 (同封装), 逐机型有帖即收; mini 2018 换 9980HK 在中国维修圈有实物流通, 待链接",
+      "description": "BGA 焊接机型的根本分级: CPU/内存颗粒与逻辑板焊死, 常规手段不可升级; 板级返修属专业改装级, 已有多机实证 — 同代同封装换装: 2012 Air 四核化+内存颗粒 16GB (Reddit), MBP 13吋 2012 四核化 (MacRumors), mini 2018 上 8核 i9-9980HK (Chiphell+LowEndMac, 散热功耗撞墙注意); 跨代换装: 17吋 2011 板上 Ivy CPU, 需 CoreBoot 自定义固件 (lowendmac/dosdude1)。同封装判定机制见野路子推导; 逐机型有帖即收",
       "affected_versions": null,
       "confidence_level": "community_tested",
       "source_url": "https://everymac.com/systems/apple/mac_mini/faq_core/mac-mini-core-upgrade-processor.html",
       "extra_source_urls": [
         "https://forums.macrumors.com/threads/creating-the-worlds-first-quad-core-mid-2012-13-inch-macbook-pro.2388731/",
         "https://www.reddit.com/r/mac/comments/1hquwht/the_we_have_it_folks_i73615qe_4c8t_and_16gb_ram/",
-        "https://lowendmac.com/2024/ultimate-hybrid-2011-2012-17-macbook-pro/"
+        "https://lowendmac.com/2024/ultimate-hybrid-2011-2012-17-macbook-pro/",
+        "https://www.chiphell.com/thread-2629222-1-1.html",
+        "https://lowendmac.com/2025/someone-upgraded-a-2018-mini-with-an-8-core-i9-9980hk/"
       ],
-      "corroboration_count": 4,
+      "corroboration_count": 5,
       "applicability": "bga_cpu_or_soldered_ram"
     }
   ],
