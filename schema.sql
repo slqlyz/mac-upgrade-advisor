@@ -58,6 +58,21 @@ CREATE TABLE IF NOT EXISTS cpu_options (
 CREATE INDEX IF NOT EXISTS idx_cpu_options_model ON cpu_options (model_id);
 
 -- ============================================================
+-- 1b2. gpu_options — 机型的每档显卡配置 (标配/选配), 与 cpu_options 同构
+--      来源: Apple 规格页 (显卡配置逐档列在页面上, 可审计)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS gpu_options (
+    id          INTEGER PRIMARY KEY,
+    model_id    INTEGER NOT NULL REFERENCES models(id),
+    gpu_model   TEXT NOT NULL,      -- 'AMD Radeon HD 6970M' / 'Intel HD Graphics 4000'
+    vram        TEXT,               -- '1GB' / '512MB'; 核显为 NULL
+    config_type TEXT NOT NULL CHECK (config_type IN ('standard','configurable')),
+    notes       TEXT,
+    UNIQUE (model_id, gpu_model, vram)
+);
+CREATE INDEX IF NOT EXISTS idx_gpu_options_model ON gpu_options (model_id);
+
+-- ============================================================
 -- 1c. platforms — CPU 平台/内存控制器层
 --     内存实际上限由内存控制器决定, 同平台共享同一条数据。
 --     controller_max_ram_gb 来自 Intel ARK (以基础款 CPU 为准)。

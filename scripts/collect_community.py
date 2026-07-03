@@ -116,8 +116,8 @@ def main():
                        (model_id, component_id, confidence_level, source_url,
                         source_type, corroboration_count, extra_source_urls,
                         verified_macos_versions, result, max_working_capacity_gb, notes,
-                        path_class)
-                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+                        path_class, unlocks_platform)
+                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
                    ON CONFLICT(model_id, component_id, confidence_level, source_url)
                    DO UPDATE SET
                        corroboration_count=excluded.corroboration_count,
@@ -126,14 +126,15 @@ def main():
                        result=excluded.result,
                        max_working_capacity_gb=excluded.max_working_capacity_gb,
                        notes=excluded.notes,
-                       path_class=excluded.path_class""",
+                       path_class=excluded.path_class,
+                       unlocks_platform=excluded.unlocks_platform""",
                 (model_id(conn, row["model_identifier"]), comp_ids[row["component_key"]],
                  row["confidence_level"], row["source_url"], row["source_type"],
                  row["corroboration_count"],
                  json.dumps(row.get("extra_source_urls") or [], ensure_ascii=False),
                  row.get("verified_macos_versions"), row.get("result", "works"),
                  row.get("max_working_capacity_gb"), row.get("notes"),
-                 row.get("path_class", "standard")),
+                 row.get("path_class", "standard"), row.get("unlocks_platform")),
             )
             print(f"  [{row['confidence_level']:16s}] {label}")
             for url in [row["source_url"]] + (row.get("extra_source_urls") or []):

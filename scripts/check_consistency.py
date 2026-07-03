@@ -77,7 +77,9 @@ def derive_nvme(m, ports):
         # 2013 起的 PCIe AHCI 刀片经 10.13+ BootROM 可引导 NVMe
         return "firmware_update_required" if m["release_year"] >= 2013 else "no"
     if has_pcie_slot:
-        return "firmware_update_required"  # Mac Pro 塔式: BootROM 更新后 PCIe NVMe 可引导
+        # 2010+ 塔式: BootROM 更新 (随 Mojave) 后 PCIe NVMe 可引导;
+        # 2009 款 (4,1) 官方固件线停在 NVMe 之前, 需刷 5,1 (野路子) 或 OpenCore
+        return "firmware_update_required" if m["release_year"] >= 2010 else "opencore_required"
     return "no"
 
 
@@ -104,6 +106,21 @@ def main():
         if base and base["cpu_model"] not in m["cpu_model"]:
             issues += 1
             print(f"  ✗ {m['model_identifier']}: 存储 {m['cpu_model']!r} vs 档位表基础款 {base['cpu_model']!r}")
+    print("  (其余一致)\n")
+
+    print("2b) stock_gpu ← gpu_options 基础款:")
+    for m in models:
+        base = conn.execute(
+            """SELECT gpu_model FROM gpu_options
+               WHERE model_id=? AND config_type='standard' ORDER BY id LIMIT 1""",
+            (m["id"],)).fetchone()
+        if base:
+            # 宽松比对: 基础款关键词 (最后一个词组) 应出现在 stock_gpu 摘要里
+            key = base["gpu_model"].split("+")[-1].strip().split(" (")[0]
+            key = key.replace("Intel ", "").replace("NVIDIA ", "").replace("AMD ", "").replace("ATI ", "").replace("GeForce ", "").replace("Radeon ", "").replace("双 ", "")
+            if key and key.split()[-1] not in (m["stock_gpu"] or ""):
+                issues += 1
+                print(f"  ✗ {m['model_identifier']}: 摘要 {m['stock_gpu']!r} vs 档位基础款 {base['gpu_model']!r}")
     print("  (其余一致)\n")
 
     print("3) storage_interface ← expansion_ports 推导:")

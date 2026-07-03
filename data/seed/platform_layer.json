@@ -59,7 +59,8 @@
       "controller_max_ram_gb": 32,
       "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=i5-3470S",
       "models": [
-        "iMac13,2"
+        "iMac13,2",
+        "iMac13,1"
       ],
       "notes": null,
       "max_module_gb": 8
@@ -131,7 +132,8 @@
       "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=i5-5257U",
       "models": [
         "MacBookPro12,1",
-        "MacBookAir7,2"
+        "MacBookAir7,2",
+        "MacBookAir7,1"
       ],
       "notes": "内存焊接, 控制器上限只对出厂配置有意义"
     },
@@ -239,6 +241,82 @@
       ],
       "notes": "控制器上限按 M 后缀 SKU 计 (W-3265M/3275M, 2TB/颗); 非 M 后缀 (W-3223/3235/3245) 为 1TB/颗; 整机 12 槽 ×128GB = 1.5TB 即 Apple 官方顶配",
       "max_module_gb": 128
+    },
+    {
+      "name": "Sandy Bridge 移动",
+      "cpu_microarch": "Sandy Bridge",
+      "memory_controller": "CPU 集成, 双通道 DDR3-1333",
+      "controller_max_ram_gb": 16,
+      "max_module_gb": 8,
+      "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=i7-2620M",
+      "models": [
+        "MacBookPro8,1",
+        "MacBookPro8,2",
+        "Macmini5,2",
+        "MacBookAir4,2"
+      ],
+      "notes": "标压移动双槽机型 2×8GB=16GB 为社区常规操作; MBA 2011 内存焊接不适用"
+    },
+    {
+      "name": "Skylake-W (LGA2066)",
+      "cpu_microarch": "Skylake-W",
+      "memory_controller": "CPU 集成, 四通道 DDR4-2666 ECC",
+      "controller_max_ram_gb": 512,
+      "max_module_gb": 128,
+      "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=W-2140B",
+      "models": [
+        "iMacPro1,1"
+      ],
+      "notes": "官方顶配 256GB (4×64); 128GB LRDIMM 出现后 OWC 实测 4×128=512GB 可用 (见证据层); 内存槽需拆屏, 非用户可达"
+    },
+    {
+      "name": "Skylake-H",
+      "cpu_microarch": "Skylake-H",
+      "memory_controller": "CPU 集成, 双通道 LPDDR3-2133 (焊接)",
+      "controller_max_ram_gb": 64,
+      "max_module_gb": null,
+      "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=i7-6700HQ",
+      "models": [
+        "MacBookPro13,3"
+      ],
+      "notes": "内存焊接, 控制器上限只对出厂配置有意义"
+    },
+    {
+      "name": "Kaby Lake-H",
+      "cpu_microarch": "Kaby Lake-H",
+      "memory_controller": "CPU 集成, 双通道 LPDDR3-2133 (焊接)",
+      "controller_max_ram_gb": 64,
+      "max_module_gb": null,
+      "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=i7-7700HQ",
+      "models": [
+        "MacBookPro14,3"
+      ],
+      "notes": "内存焊接, 控制器上限只对出厂配置有意义"
+    },
+    {
+      "name": "Coffee Lake-H (含 9 代 Refresh)",
+      "cpu_microarch": "Coffee Lake-H / Refresh",
+      "memory_controller": "CPU 集成, 双通道 DDR4-2400/2666 (焊接)",
+      "controller_max_ram_gb": 64,
+      "max_module_gb": null,
+      "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=i9-9980HK",
+      "models": [
+        "MacBookPro15,1",
+        "MacBookPro16,1"
+      ],
+      "notes": "内存焊接, 控制器上限只对出厂配置有意义"
+    },
+    {
+      "name": "Nehalem-EP (LGA1366, 2009 原生固件)",
+      "cpu_microarch": "Nehalem-EP",
+      "memory_controller": "CPU 集成, 三通道 DDR3-1066 ECC",
+      "controller_max_ram_gb": 288,
+      "max_module_gb": 8,
+      "controller_source_url": "https://ark.intel.com/content/www/us/en/ark/search.html?q=X5570",
+      "models": [
+        "MacPro4,1"
+      ],
+      "notes": "Nehalem 世代仅认 8GB DIMM (16GB RDIMM 需 Westmere 内存控制器); 原生 4,1 固件无 Westmere 微码, X56xx 根本无法 POST — 上 Westmere/16GB 条/128GB 都必须先刷 5,1 固件 (见该机野路子); 原生固件双路上限 8×8=64GB"
     }
   ],
   "expansion_ports": [
@@ -854,6 +932,248 @@
           "notes": null
         }
       ]
+    },
+    {
+      "model": "MacBookPro8,1",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "optical_bay",
+          "spec": "SATA 光驱位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": "可装 caddy 加第二块盘"
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 1 (10Gbps)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model": "MacBookPro8,2",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "optical_bay",
+          "spec": "SATA 光驱位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": "可装 caddy 加第二块盘"
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 1 (10Gbps)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model": "MacBookAir4,2",
+      "ports": [
+        {
+          "port_type": "apple_ssd_blade",
+          "spec": "Apple 专有 SATA 刀片槽 (2010-2011 形制)",
+          "count": 1,
+          "source_url": "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide",
+          "notes": "与 2012 款刀片不互换"
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 1 (10Gbps)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model": "Macmini5,2",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 位",
+          "count": 2,
+          "source_url": "https://www.ifixit.com/Device/Mac_mini_Mid_2011",
+          "notes": "第二位需排线套件, 同 2012 款"
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 1 (10Gbps)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model": "MacPro4,1",
+      "ports": [
+        {
+          "port_type": "pcie_slot",
+          "spec": "PCIe 2.0 x16 (槽1, 双宽)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": "出厂装显卡"
+        },
+        {
+          "port_type": "pcie_slot",
+          "spec": "PCIe 2.0 x16 (槽2)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "pcie_slot",
+          "spec": "PCIe 2.0 x4 (槽3/4)",
+          "count": 2,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "sata",
+          "spec": "SATA II 3Gbps 3.5\" 免工具硬盘位",
+          "count": 4,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "optical_bay",
+          "spec": "5.25\" 光驱位 (SATA)",
+          "count": 2,
+          "source_url": "$apple_spec",
+          "notes": "可改装硬盘/SSD"
+        }
+      ]
+    },
+    {
+      "model": "iMac13,1",
+      "ports": [
+        {
+          "port_type": "sata",
+          "spec": "SATA 2.5\" 硬盘位",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        },
+        {
+          "port_type": "apple_ssd_blade",
+          "spec": "Apple 专有 SATA 刀片槽 (Fusion)",
+          "count": 1,
+          "source_url": "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide",
+          "notes": null
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 1 (10Gbps)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model": "iMacPro1,1",
+      "ports": [
+        {
+          "port_type": "apple_ssd_blade",
+          "spec": "Apple 专有 NVMe 双刀片 (T2 配对)",
+          "count": 2,
+          "source_url": "$apple_spec",
+          "notes": "T2 配对, 更换需成对且 DFU 恢复, 实际视为不可自行升级"
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 3 (40Gbps, USB-C)",
+          "count": 4,
+          "source_url": "$apple_spec",
+          "notes": "eGPU 官方支持路径"
+        }
+      ]
+    },
+    {
+      "model": "MacBookPro13,3",
+      "ports": [
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 3 (40Gbps, USB-C)",
+          "count": 4,
+          "source_url": "$apple_spec",
+          "notes": "eGPU 官方支持路径"
+        }
+      ]
+    },
+    {
+      "model": "MacBookPro14,3",
+      "ports": [
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 3 (40Gbps, USB-C)",
+          "count": 4,
+          "source_url": "$apple_spec",
+          "notes": "eGPU 官方支持路径"
+        }
+      ]
+    },
+    {
+      "model": "MacBookPro15,1",
+      "ports": [
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 3 (40Gbps, USB-C)",
+          "count": 4,
+          "source_url": "$apple_spec",
+          "notes": "eGPU 官方支持路径"
+        }
+      ]
+    },
+    {
+      "model": "MacBookPro16,1",
+      "ports": [
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 3 (40Gbps, USB-C)",
+          "count": 4,
+          "source_url": "$apple_spec",
+          "notes": "eGPU 官方支持路径"
+        }
+      ]
+    },
+    {
+      "model": "MacBookAir7,1",
+      "ports": [
+        {
+          "port_type": "apple_ssd_blade",
+          "spec": "Apple 专有 PCIe x2 AHCI 刀片槽",
+          "count": 1,
+          "source_url": "https://beetstech.com/blog/apple-proprietary-ssd-ultimate-guide",
+          "notes": "NVMe 需转接卡+固件"
+        },
+        {
+          "port_type": "thunderbolt",
+          "spec": "Thunderbolt 2 (20Gbps)",
+          "count": 1,
+          "source_url": "$apple_spec",
+          "notes": null
+        }
+      ]
     }
   ],
   "hw_constraints": [
@@ -911,15 +1231,16 @@
     {
       "scope": "global",
       "constraint_type": "other",
-      "description": "BGA 焊接机型的根本分级: CPU/内存颗粒与逻辑板焊死, 常规手段不可升级, 插槽类方案不适用; 板级返修 (拆焊换更高型号 CPU、加焊大容量内存颗粒, 如社区讨论的 Mac mini 2018 换芯) 技术上存在, 属专业改装级, 目前未收集到 ≥2 独立来源的成功案例, 故不入实证层; 出现可靠实证后按 experimental 收录",
+      "description": "BGA 焊接机型的根本分级: CPU/内存颗粒与逻辑板焊死, 常规手段不可升级; 板级返修属专业改装级, 已有多机实证 — 同代同封装换装: 2012 Air 上四核 3615QE + 内存颗粒加焊 16GB (Reddit), MBP 13吋 2012 四核化 (MacRumors); 跨代换装: 17吋 2011 板上 Ivy CPU, 需 CoreBoot 自定义固件 (lowendmac/dosdude1)。该类操作理论上可推广到全部 SNB/IVB BGA 机型 (同封装), 逐机型有帖即收; mini 2018 换 9980HK 在中国维修圈有实物流通, 待链接",
       "affected_versions": null,
       "confidence_level": "community_tested",
       "source_url": "https://everymac.com/systems/apple/mac_mini/faq_core/mac-mini-core-upgrade-processor.html",
       "extra_source_urls": [
-        "https://forums.macrumors.com/threads/upgrade-the-cpu-on-a-mac-mini-2018.2245362/",
-        "https://www.ifixit.com/Teardown/Mac+mini+Late+2018+Teardown/115210"
+        "https://forums.macrumors.com/threads/creating-the-worlds-first-quad-core-mid-2012-13-inch-macbook-pro.2388731/",
+        "https://www.reddit.com/r/mac/comments/1hquwht/the_we_have_it_folks_i73615qe_4c8t_and_16gb_ram/",
+        "https://lowendmac.com/2024/ultimate-hybrid-2011-2012-17-macbook-pro/"
       ],
-      "corroboration_count": 3,
+      "corroboration_count": 4,
       "applicability": "bga_cpu_or_soldered_ram"
     }
   ],

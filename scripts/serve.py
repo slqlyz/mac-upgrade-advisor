@@ -75,6 +75,11 @@ def api_model_detail(identifier):
            ORDER BY config_type = 'configurable', cores, ghz""",
         (m["id"],),
     )
+    gpu_options = query_db(
+        """SELECT * FROM gpu_options WHERE model_id = ?
+           ORDER BY config_type = 'configurable', id""",
+        (m["id"],),
+    )
     platform = None
     if m.get("platform_id"):
         rows = query_db("SELECT * FROM platforms WHERE id = ?", (m["platform_id"],))
@@ -123,7 +128,8 @@ def api_model_detail(identifier):
     oclp_target_opts = [{"version": v["version"], "name": v["name"]}
                         for v in advisor.oclp_targets(m, versions)]
     return {"model": m, "compatibility": layers, "conflicts": conflicts,
-            "cpu_options": cpu_options, "platform": platform, "ports": ports,
+            "cpu_options": cpu_options, "gpu_options": gpu_options,
+            "platform": platform, "ports": ports,
             "constraints": constraints, "gpu_archs": gpu_archs, "gpu_paths": gpu_paths,
             "wild_available": wild_available,
             "oclp_applicable": advisor.oclp_applicable(m) and len(oclp_target_opts) > 0,
@@ -310,14 +316,18 @@ async function showModel(id) {
           : ' · <span style="color:var(--official)">插槽式, 可物理换装</span>') : ""}</div></div>
       <div><div class="k">内存 (官方上限 / 物理可达)</div><div class="v">${m.official_max_ram_gb}GB / ${(() => {
         const p = d.platform;
-        if (!p || !p.controller_max_ram_gb || !m.ram_slots) return "—";
+        if (!m.ram_slots) {
+          if (m.release_year >= 2012 && m.release_year <= 2019)
+            return `${Math.max(16, m.official_max_ram_gb)}GB (颗粒加焊, 见野路子)`;
+          return `${m.official_max_ram_gb}GB (焊接封顶)`;
+        }
+        if (!p || !p.controller_max_ram_gb) return "—";
         const phys = p.max_module_gb ? Math.min(p.controller_max_ram_gb, m.ram_slots * p.max_module_gb) : p.controller_max_ram_gb;
         const vary = phys < m.official_max_ram_gb ? " ⚠随 CPU SKU 而异, 见平台备注" : "";
         return `${phys}GB${p.max_module_gb ? ` (${m.ram_slots}槽×单条${p.max_module_gb}GB, 控制器 ${p.controller_max_ram_gb}GB${vary})` : ""}`;
-      })()} · ${esc(m.ram_type || "")} · 插槽 ×${m.ram_slots}${
-        m.ram_slots > 0
-          ? ' · <span style="color:var(--official)">插槽式, 可自行升级</span>'
-          : ' · <span style="color:var(--experimental)">焊接, 常规不可升级</span>'}</div></div>
+      })()} · ${esc(m.ram_type || "")} · 插槽 ×${m.ram_slots}${m.ram_slots > 0
+        ? ' · <span style="color:var(--official)">插槽式, 可自行升级</span>'
+        : ' · <span style="color:var(--experimental)">焊接, 常规不可升级</span>'}</div></div>
       ${d.platform ? `<div><div class="k">平台 (内存控制器)</div><div class="v">${esc(d.platform.name)} · ${esc(d.platform.memory_controller)}</div></div>` : ""}
       <div><div class="k">存储接口</div><div class="v">${esc(m.storage_interface)}</div></div>
       ${m.stock_gpu ? `<div><div class="k">原装显卡</div><div class="v">${esc(m.stock_gpu)} · ${
@@ -325,12 +335,19 @@ async function showModel(id) {
                           : '<span style="color:var(--experimental)">非 Metal</span>'}</div></div>` : ""}
       <div><div class="k">NVMe 引导</div><div class="v">${NVME_LABEL[m.nvme_bootable] || esc(m.nvme_bootable)}</div></div>
       <div><div class="k">官方最高系统</div><div class="v">${esc(m.max_macos || "未知")}</div></div>
+      ${m.board_id ? `<div><div class="k">逻辑板 ID (OCLP 用)</div><div class="v" style="font-family:ui-monospace,monospace;font-size:12px">${esc(m.board_id)}</div></div>` : ""}
     </div>
     ${d.cpu_options.length ? `<div style="margin-top:14px">
       <div class="k" style="font-size:11px;color:var(--muted)">CPU 配置档 (${d.cpu_options.length} 档; 主频/核数源自 Apple 页面, 型号编号经 EveryMac 核对)</div>
       ${d.cpu_options.map(c => `<div style="font-size:13px;padding:2px 0">
         <span class="tag">${c.config_type === "standard" ? "标配" : "选配"}</span>
         ${c.ghz}GHz ${c.cores}核 — ${esc(c.cpu_model)}${c.notes ? ` <span style="color:var(--muted)">(${esc(c.notes)})</span>` : ""}
+      </div>`).join("")}</div>` : ""}
+    ${d.gpu_options.length ? `<div style="margin-top:14px">
+      <div class="k" style="font-size:11px;color:var(--muted)">显卡配置档 (${d.gpu_options.length} 档; 源自 Apple 规格页)</div>
+      ${d.gpu_options.map(g => `<div style="font-size:13px;padding:2px 0">
+        <span class="tag">${g.config_type === "standard" ? "标配" : "选配"}</span>
+        ${esc(g.gpu_model)}${g.vram ? ` ${esc(g.vram)}` : ""}${g.notes ? ` <span style="color:var(--muted)">(${esc(g.notes)})</span>` : ""}
       </div>`).join("")}</div>` : ""}
     ${d.platform && d.platform.notes && m.ram_slots > 0 ? `<div class="notes" style="margin-top:10px;font-size:12px">${esc(d.platform.notes)}</div>` : ""}
     <div style="margin-top:12px" class="sources">

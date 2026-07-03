@@ -121,7 +121,14 @@ def show_model(conn, m):
             else f"控制器 {plat['controller_max_ram_gb']}GB"
         vary = " ⚠随 CPU SKU 而异, 见平台备注" if phys < m["official_max_ram_gb"] else ""
         ctrl = f" / 物理可达 {phys}GB ({detail}{vary}; 平台: {plat['name']}, 来源 Intel ARK)"
-    ram_upg = "插槽式, 可自行升级" if m["ram_slots"] > 0 else "焊接, 常规不可升级"
+    if m["ram_slots"] > 0:
+        ram_upg = "插槽式, 可自行升级"
+    elif 2012 <= m["release_year"] <= 2019:
+        _f = max(16, m["official_max_ram_gb"])
+        ctrl = f" / 物理可达 {_f}GB (颗粒加焊, 见野路子; 上限受主板颗粒位布线约束)"
+        ram_upg = "焊接, 常规不可升级"
+    else:
+        ram_upg = "焊接, 常规不可升级 (2012 前部分主板缺高容量数据线, 加焊亦不通用)"
     print(f"  内存: 官方上限 {m['official_max_ram_gb']}GB{ctrl}, {m['ram_type']}, 插槽 x{m['ram_slots']} — {ram_upg}")
     if plat and plat["notes"] and m["ram_slots"] > 0:
         print(f"    平台备注: {plat['notes']}")
@@ -134,6 +141,8 @@ def show_model(conn, m):
            else "插槽式, CPU 可物理换装 (同代固件约束见下)" if sock.startswith("LGA")
            else "未知")
     print(f"  CPU 插槽: {sock} — {upg}  |  官方最高系统: {m['max_macos'] or '未知'}")
+    if m["board_id"]:
+        print(f"  逻辑板 ID: {m['board_id']}  (OCLP/黑苹果场景用, 来源: OCLP smbios 数据)")
     print(f"  来源: {m['apple_spec_url']}\n")
 
     cpus = conn.execute(
@@ -147,6 +156,20 @@ def show_model(conn, m):
             tag = "标配" if c["config_type"] == "standard" else "选配"
             note = f", {c['notes']}" if c["notes"] else ""
             print(f"    [{tag}] {c['ghz']}GHz {c['cores']}核 — {c['cpu_model']}{note}")
+        print()
+
+    gpus = conn.execute(
+        """SELECT * FROM gpu_options WHERE model_id = ?
+           ORDER BY config_type = 'configurable', id""",
+        (m["id"],),
+    ).fetchall()
+    if gpus:
+        print(f"  显卡配置档 ({len(gpus)} 档; 源自 Apple 规格页):")
+        for g in gpus:
+            tag = "标配" if g["config_type"] == "standard" else "选配"
+            vram = f" {g['vram']}" if g["vram"] else ""
+            note = f", {g['notes']}" if g["notes"] else ""
+            print(f"    [{tag}] {g['gpu_model']}{vram}{note}")
         print()
 
     ports = conn.execute(

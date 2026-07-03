@@ -35,7 +35,16 @@
       "stock_storage": "HDD 5400rpm (SSD 选配)",
       "stock_gpu": "Intel HD Graphics 4000",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-6F01561E16C75D06",
+      "gpu_options": [
+        {
+          "gpu": "Intel HD Graphics 4000",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "MacBook Pro (15-inch, Mid 2010)",
@@ -78,7 +87,22 @@
       "stock_storage": "HDD 5400rpm (SSD 选配)",
       "stock_gpu": "NVIDIA GeForce GT 330M + Intel HD Graphics",
       "stock_gpu_metal": 0,
-      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显"
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显",
+      "board_id": "Mac-F22586C8",
+      "gpu_options": [
+        {
+          "gpu": "NVIDIA GeForce GT 330M + Intel HD",
+          "vram": "256MB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "NVIDIA GeForce GT 330M + Intel HD",
+          "vram": "512MB",
+          "config": "standard",
+          "notes": "高配档"
+        }
+      ]
     },
     {
       "model_name": "MacBook Pro (Retina, 13-inch, Late 2013)",
@@ -121,7 +145,16 @@
       "stock_storage": "SSD",
       "stock_gpu": "Intel Iris 5100",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-189A3D4F975D5FFC",
+      "gpu_options": [
+        {
+          "gpu": "Intel Iris 5100",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "MacBook Pro (Retina, 15-inch, Mid 2015)",
@@ -164,7 +197,16 @@
       "stock_storage": "SSD",
       "stock_gpu": "Intel Iris Pro 5200",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-06F11FD93F0323C5",
+      "gpu_options": [
+        {
+          "gpu": "Intel Iris Pro 5200",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "MacBook Pro (Retina, 13-inch, Early 2015)",
@@ -207,7 +249,16 @@
       "stock_storage": "SSD",
       "stock_gpu": "Intel Iris 6100",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-E43C1C25D4880AD6",
+      "gpu_options": [
+        {
+          "gpu": "Intel Iris 6100",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)",
@@ -243,7 +294,16 @@
       "stock_storage": "SSD",
       "stock_gpu": "Intel Iris 540",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-473D31EABEB93F9B",
+      "gpu_options": [
+        {
+          "gpu": "Intel Iris 540",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "MacBook Air (13-inch, Mid 2013)",
@@ -279,7 +339,16 @@
       "stock_storage": "SSD",
       "stock_gpu": "Intel HD 5000",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-7DF21CB3ED6977E5",
+      "gpu_options": [
+        {
+          "gpu": "Intel HD Graphics 5000",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "MacBook Air (13-inch, Early 2015)",
@@ -315,7 +384,16 @@
       "stock_storage": "SSD",
       "stock_gpu": "Intel HD 6000",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-937CB26E2E02BB01",
+      "gpu_options": [
+        {
+          "gpu": "Intel HD Graphics 6000",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "Mac mini (Late 2012)",
@@ -351,7 +429,16 @@
       "stock_storage": "HDD 5400rpm (SSD/Fusion 选配)",
       "stock_gpu": "Intel HD 4000",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-F65AE981FFA204ED",
+      "gpu_options": [
+        {
+          "gpu": "Intel HD Graphics 4000",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "Mac mini (Late 2014)",
@@ -401,7 +488,22 @@
       "stock_storage": "HDD 5400rpm (Fusion/SSD 选配)",
       "stock_gpu": "Intel HD 5000 / Iris 5100",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-35C5E08120C7EEAF",
+      "gpu_options": [
+        {
+          "gpu": "Intel HD 5000",
+          "vram": null,
+          "config": "standard",
+          "notes": "1.4GHz 档"
+        },
+        {
+          "gpu": "Intel Iris 5100",
+          "vram": null,
+          "config": "standard",
+          "notes": "2.6/2.8GHz 档"
+        }
+      ]
     },
     {
       "model_name": "Mac mini (2018)",
@@ -444,7 +546,16 @@
       "stock_storage": "SSD",
       "stock_gpu": "Intel UHD 630",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "无显卡类 caveat"
+      "oclp_caveat": "无显卡类 caveat",
+      "board_id": "Mac-7BA5B2DFE22DDD8C",
+      "gpu_options": [
+        {
+          "gpu": "Intel UHD 630",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "iMac (27-inch, Mid 2011)",
@@ -487,7 +598,28 @@
       "stock_storage": "HDD 7200rpm (SSD 选配)",
       "stock_gpu": "AMD Radeon HD 6770M/6970M (TeraScale)",
       "stock_gpu_metal": 0,
-      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显"
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显",
+      "board_id": "Mac-942B59F58194171B",
+      "gpu_options": [
+        {
+          "gpu": "AMD Radeon HD 6770M",
+          "vram": "512MB",
+          "config": "standard",
+          "notes": "2.7GHz 档"
+        },
+        {
+          "gpu": "AMD Radeon HD 6970M",
+          "vram": "1GB",
+          "config": "standard",
+          "notes": "3.1GHz 档"
+        },
+        {
+          "gpu": "AMD Radeon HD 6970M",
+          "vram": "2GB",
+          "config": "configurable",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "iMac (27-inch, Late 2012)",
@@ -530,7 +662,28 @@
       "stock_storage": "HDD 7200rpm (Fusion/SSD 选配)",
       "stock_gpu": "NVIDIA GTX 660M–680MX (Kepler)",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-FC02E91DDD3FA6A4",
+      "gpu_options": [
+        {
+          "gpu": "NVIDIA GeForce GTX 660M",
+          "vram": "512MB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "NVIDIA GeForce GTX 675MX",
+          "vram": "1GB",
+          "config": "standard",
+          "notes": "3.2GHz 档"
+        },
+        {
+          "gpu": "NVIDIA GeForce GTX 680MX",
+          "vram": "2GB",
+          "config": "configurable",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "iMac (27-inch, Late 2013)",
@@ -573,7 +726,28 @@
       "stock_storage": "HDD 7200rpm (Fusion/SSD 选配)",
       "stock_gpu": "NVIDIA GT 755M–GTX 780M (Kepler)",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-27ADBB7B4CEE8E61",
+      "gpu_options": [
+        {
+          "gpu": "NVIDIA GeForce GT 755M",
+          "vram": "1GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "NVIDIA GeForce GTX 775M",
+          "vram": "2GB",
+          "config": "standard",
+          "notes": "3.4GHz 档"
+        },
+        {
+          "gpu": "NVIDIA GeForce GTX 780M",
+          "vram": "4GB",
+          "config": "configurable",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "iMac (Retina 5K, 27-inch, Late 2015)",
@@ -616,7 +790,34 @@
       "stock_storage": "HDD/Fusion (SSD 选配)",
       "stock_gpu": "AMD R9 M380/M390/M395X (GCN)",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-DB15BD556843C820",
+      "gpu_options": [
+        {
+          "gpu": "AMD Radeon R9 M380",
+          "vram": "2GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "AMD Radeon R9 M390",
+          "vram": "2GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "AMD Radeon R9 M395",
+          "vram": "2GB",
+          "config": "standard",
+          "notes": "3.3GHz 档"
+        },
+        {
+          "gpu": "AMD Radeon R9 M395X",
+          "vram": "4GB",
+          "config": "configurable",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "iMac (Retina 5K, 27-inch, 2017)",
@@ -666,7 +867,28 @@
       "stock_storage": "Fusion (SSD 选配)",
       "stock_gpu": "AMD Radeon Pro 570/575/580 (Polaris)",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "无显卡类 caveat (Polaris 驱动仍原生)"
+      "oclp_caveat": "无显卡类 caveat (Polaris 驱动仍原生)",
+      "board_id": "Mac-BE088AF8C5EB4FA2",
+      "gpu_options": [
+        {
+          "gpu": "AMD Radeon Pro 570",
+          "vram": "4GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "AMD Radeon Pro 575",
+          "vram": "4GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "AMD Radeon Pro 580",
+          "vram": "8GB",
+          "config": "standard",
+          "notes": "3.8GHz 档"
+        }
+      ]
     },
     {
       "model_name": "iMac (Retina 5K, 27-inch, 2019)",
@@ -716,7 +938,34 @@
       "stock_storage": "Fusion (SSD 选配)",
       "stock_gpu": "AMD Radeon Pro 570X–Vega 48",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "无显卡类 caveat"
+      "oclp_caveat": "无显卡类 caveat",
+      "board_id": "Mac-AA95B1DDAB278B95",
+      "gpu_options": [
+        {
+          "gpu": "AMD Radeon Pro 570X",
+          "vram": "4GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "AMD Radeon Pro 575X",
+          "vram": "4GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "AMD Radeon Pro 580X",
+          "vram": "8GB",
+          "config": "standard",
+          "notes": "3.7GHz 档"
+        },
+        {
+          "gpu": "AMD Radeon Pro Vega 48",
+          "vram": "8GB HBM2",
+          "config": "configurable",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "iMac (Retina 5K, 27-inch, 2020)",
@@ -766,7 +1015,34 @@
       "stock_storage": "SSD",
       "stock_gpu": "AMD Radeon Pro 5300–5700 XT (RDNA)",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "无显卡类 caveat"
+      "oclp_caveat": "无显卡类 caveat",
+      "board_id": "Mac-CFF7D910A743CAAF",
+      "gpu_options": [
+        {
+          "gpu": "AMD Radeon Pro 5300",
+          "vram": "4GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "AMD Radeon Pro 5500 XT",
+          "vram": "8GB",
+          "config": "standard",
+          "notes": "高配档"
+        },
+        {
+          "gpu": "AMD Radeon Pro 5700",
+          "vram": "8GB",
+          "config": "configurable",
+          "notes": null
+        },
+        {
+          "gpu": "AMD Radeon Pro 5700 XT",
+          "vram": "16GB",
+          "config": "configurable",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "Mac Pro (Mid 2010)",
@@ -830,7 +1106,22 @@
       "stock_storage": "HDD 7200rpm",
       "stock_gpu": "ATI Radeon HD 5770/5870 (TeraScale)",
       "stock_gpu_metal": 0,
-      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显; 换 Metal 卡后按所装卡计"
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显; 换 Metal 卡后按所装卡计",
+      "board_id": "Mac-F221BEC8",
+      "gpu_options": [
+        {
+          "gpu": "ATI Radeon HD 5770",
+          "vram": "1GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "ATI Radeon HD 5870",
+          "vram": "1GB",
+          "config": "configurable",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "Mac Pro (Late 2013)",
@@ -880,7 +1171,28 @@
       "stock_storage": "SSD",
       "stock_gpu": "双 AMD FirePro D300/D500/D700 (GCN)",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-F60DEB81FF30ACF6",
+      "gpu_options": [
+        {
+          "gpu": "双 AMD FirePro D300",
+          "vram": "2×2GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "双 AMD FirePro D500",
+          "vram": "2×3GB",
+          "config": "standard",
+          "notes": "6核档"
+        },
+        {
+          "gpu": "双 AMD FirePro D700",
+          "vram": "2×6GB",
+          "config": "configurable",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "MacBook Pro (Retina, 15-inch, Mid 2015)",
@@ -916,7 +1228,16 @@
       "stock_storage": "SSD",
       "stock_gpu": "Intel Iris Pro + AMD R9 M370X",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-06F11F11946D27C5",
+      "gpu_options": [
+        {
+          "gpu": "Intel Iris Pro + AMD Radeon R9 M370X",
+          "vram": "2GB",
+          "config": "standard",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "MacBook Pro (Retina, 15-inch, Mid 2012)",
@@ -959,7 +1280,22 @@
       "stock_storage": "SSD",
       "stock_gpu": "Intel HD 4000 + NVIDIA GT 650M (Kepler)",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-C3EC7CD22292981F",
+      "gpu_options": [
+        {
+          "gpu": "Intel HD 4000 + NVIDIA GT 650M",
+          "vram": "512MB",
+          "config": "standard",
+          "notes": "2.3GHz 档"
+        },
+        {
+          "gpu": "Intel HD 4000 + NVIDIA GT 650M",
+          "vram": "1GB",
+          "config": "standard",
+          "notes": "2.6/2.7GHz 档"
+        }
+      ]
     },
     {
       "model_name": "MacBook Air (13-inch, Mid 2012)",
@@ -995,7 +1331,16 @@
       "stock_storage": "SSD",
       "stock_gpu": "Intel HD 4000",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-2E6FAB96566FE58C",
+      "gpu_options": [
+        {
+          "gpu": "Intel HD Graphics 4000",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "iMac (21.5-inch, Mid 2011)",
@@ -1038,7 +1383,22 @@
       "stock_storage": "HDD 7200rpm",
       "stock_gpu": "AMD Radeon HD 6750M/6770M (TeraScale)",
       "stock_gpu_metal": 0,
-      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显"
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显",
+      "board_id": "Mac-942B5BF58194151B",
+      "gpu_options": [
+        {
+          "gpu": "AMD Radeon HD 6750M",
+          "vram": "512MB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "AMD Radeon HD 6770M",
+          "vram": "512MB",
+          "config": "standard",
+          "notes": "2.7GHz 档"
+        }
+      ]
     },
     {
       "model_name": "MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)",
@@ -1074,7 +1434,16 @@
       "stock_storage": "SSD",
       "stock_gpu": "Intel Iris Plus 640",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好"
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "board_id": "Mac-B4831CEBD52A0C4C",
+      "gpu_options": [
+        {
+          "gpu": "Intel Iris Plus 640",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
     },
     {
       "model_name": "Mac Pro (2019)",
@@ -1131,7 +1500,722 @@
       "stock_storage": "SSD",
       "stock_gpu": "AMD Radeon Pro 580X 起 (MPX 模块)",
       "stock_gpu_metal": 1,
-      "oclp_caveat": "无显卡类 caveat"
+      "oclp_caveat": "无显卡类 caveat",
+      "board_id": "Mac-27AD2F918AE68F61",
+      "gpu_options": [
+        {
+          "gpu": "AMD Radeon Pro 580X",
+          "vram": "8GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "AMD Radeon Pro W5500X",
+          "vram": "8GB",
+          "config": "configurable",
+          "notes": "后期追加"
+        },
+        {
+          "gpu": "AMD Radeon Pro W5700X",
+          "vram": "16GB",
+          "config": "configurable",
+          "notes": "后期追加"
+        },
+        {
+          "gpu": "AMD Radeon Pro Vega II",
+          "vram": "32GB HBM2",
+          "config": "configurable",
+          "notes": "MPX 模块, 可双卡 Duo"
+        }
+      ]
+    },
+    {
+      "model_name": "MacBook Pro (13-inch, Early 2011)",
+      "model_identifier": "MacBookPro8,1",
+      "release_year": 2011,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i5-2415M (2.3GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 8,
+      "ram_type": "DDR3-1333 SO-DIMM",
+      "ram_slots": 2,
+      "storage_interface": "SATA",
+      "stock_storage": "HDD 5400rpm (SSD 选配)",
+      "nvme_bootable": "no",
+      "max_macos": "macOS High Sierra 10.13",
+      "apple_spec_url": "https://support.apple.com/kb/SP619",
+      "verify_marker": "13-inch, Early 2011",
+      "board_id": "Mac-94245B3640C91C81",
+      "stock_gpu": "Intel HD Graphics 3000",
+      "stock_gpu_metal": 0,
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-2415M",
+          "ghz": 2.3,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-2620M",
+          "ghz": 2.7,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "gpu_options": [
+        {
+          "gpu": "Intel HD Graphics 3000",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model_name": "MacBook Pro (15-inch, Early 2011)",
+      "model_identifier": "MacBookPro8,2",
+      "release_year": 2011,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i7-2635QM (2.0GHz 4核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 8,
+      "ram_type": "DDR3-1333 SO-DIMM",
+      "ram_slots": 2,
+      "storage_interface": "SATA",
+      "stock_storage": "HDD 5400rpm (SSD 选配)",
+      "nvme_bootable": "no",
+      "max_macos": "macOS High Sierra 10.13",
+      "apple_spec_url": "https://support.apple.com/kb/SP620",
+      "verify_marker": "15-inch, Early 2011",
+      "board_id": "Mac-94245A3940C91C80",
+      "stock_gpu": "Intel HD 3000 + AMD Radeon HD 6490M/6750M (TeraScale)",
+      "stock_gpu_metal": 0,
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显; 另: 本机型独显有大规模焊点故障史 (Radeongate), 二手购买高危",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i7-2635QM",
+          "ghz": 2.0,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-2720QM",
+          "ghz": 2.2,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-2820QM",
+          "ghz": 2.3,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "gpu_options": [
+        {
+          "gpu": "Intel HD 3000 + AMD Radeon HD 6490M",
+          "vram": "256MB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "Intel HD 3000 + AMD Radeon HD 6750M",
+          "vram": "512MB",
+          "config": "standard",
+          "notes": "高配档"
+        },
+        {
+          "gpu": "Intel HD 3000 + AMD Radeon HD 6750M",
+          "vram": "1GB",
+          "config": "configurable",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model_name": "MacBook Air (13-inch, Mid 2011)",
+      "model_identifier": "MacBookAir4,2",
+      "release_year": 2011,
+      "family": "MacBook Air",
+      "cpu_model": "Intel Core i5-2557M (1.7GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 4,
+      "ram_type": "soldered DDR3-1333",
+      "ram_slots": 0,
+      "storage_interface": "proprietary-SATA blade",
+      "stock_storage": "SSD",
+      "nvme_bootable": "no",
+      "max_macos": "macOS High Sierra 10.13",
+      "apple_spec_url": "https://support.apple.com/kb/SP683",
+      "verify_marker": "13-inch, Mid 2011",
+      "board_id": "Mac-742912EFDBEE19B3",
+      "stock_gpu": "Intel HD Graphics 3000",
+      "stock_gpu_metal": 0,
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-2557M",
+          "ghz": 1.7,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-2677M",
+          "ghz": 1.8,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "gpu_options": [
+        {
+          "gpu": "Intel HD Graphics 3000",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model_name": "Mac mini (Mid 2011)",
+      "model_identifier": "Macmini5,2",
+      "release_year": 2011,
+      "family": "Mac mini",
+      "cpu_model": "Intel Core i5-2520M (2.5GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 8,
+      "ram_type": "DDR3-1333 SO-DIMM",
+      "ram_slots": 2,
+      "storage_interface": "SATA",
+      "stock_storage": "HDD 5400rpm",
+      "nvme_bootable": "no",
+      "max_macos": "macOS High Sierra 10.13",
+      "apple_spec_url": "https://support.apple.com/kb/SP632",
+      "verify_marker": "Mid 2011",
+      "board_id": "Mac-4BC72D62AD45599E",
+      "stock_gpu": "AMD Radeon HD 6630M (TeraScale)",
+      "stock_gpu_metal": 0,
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-2520M",
+          "ghz": 2.5,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-2620M",
+          "ghz": 2.7,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "gpu_options": [
+        {
+          "gpu": "AMD Radeon HD 6630M",
+          "vram": "256MB",
+          "config": "standard",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model_name": "Mac Pro (Early 2009)",
+      "model_identifier": "MacPro4,1",
+      "release_year": 2009,
+      "family": "Mac Pro",
+      "cpu_model": "Intel Xeon W3520 (2.66GHz 4核)",
+      "cpu_socket": "LGA1366",
+      "official_max_ram_gb": 32,
+      "ram_type": "DDR3-1066 ECC UDIMM (单CPU 4槽/双CPU 8槽)",
+      "ram_slots": 8,
+      "storage_interface": "SATA + PCIe-slot",
+      "stock_storage": "HDD 7200rpm",
+      "nvme_bootable": "opencore_required",
+      "max_macos": "OS X El Capitan 10.11",
+      "apple_spec_url": "https://support.apple.com/kb/SP506",
+      "verify_marker": "Early 2009",
+      "board_id": "Mac-F221BEC8",
+      "stock_gpu": "NVIDIA GeForce GT 120 (Tesla, TeraScale同代)",
+      "stock_gpu_metal": 0,
+      "oclp_caveat": "non-Metal GPU: macOS 11+ 需 OCLP 非 Metal 补丁, 图形体验受损明显; 换 Metal 卡后按所装卡计; 刷 5,1 固件后按 5,1 逻辑 (见野路子)",
+      "cpu_options": [
+        {
+          "cpu": "Intel Xeon W3520",
+          "ghz": 2.66,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "2× Intel Xeon E5520",
+          "ghz": 2.26,
+          "cores": 8,
+          "config": "standard",
+          "notes": "双路, 2×4核"
+        },
+        {
+          "cpu": "Intel Xeon W3580",
+          "ghz": 3.33,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        },
+        {
+          "cpu": "2× Intel Xeon X5570",
+          "ghz": 2.93,
+          "cores": 8,
+          "config": "configurable",
+          "notes": "双路, 2×4核"
+        }
+      ],
+      "gpu_options": [
+        {
+          "gpu": "NVIDIA GeForce GT 120",
+          "vram": "512MB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "ATI Radeon HD 4870",
+          "vram": "512MB",
+          "config": "configurable",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model_name": "iMac (21.5-inch, Late 2012)",
+      "model_identifier": "iMac13,1",
+      "release_year": 2012,
+      "family": "iMac",
+      "cpu_model": "Intel Core i5-3330S (2.7GHz 4核)",
+      "cpu_socket": "LGA1155",
+      "official_max_ram_gb": 16,
+      "ram_type": "DDR3-1600 SO-DIMM (2槽, 需拆屏, 非用户可达)",
+      "ram_slots": 2,
+      "storage_interface": "SATA + proprietary blade (Fusion)",
+      "stock_storage": "HDD 5400rpm (Fusion 选配)",
+      "nvme_bootable": "no",
+      "max_macos": "macOS Catalina 10.15",
+      "apple_spec_url": "https://support.apple.com/kb/SP665",
+      "verify_marker": "21.5-inch, Late 2012",
+      "board_id": "Mac-00BE6ED71E35EB86",
+      "stock_gpu": "NVIDIA GT 640M/650M (Kepler)",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-3330S",
+          "ghz": 2.7,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i5-3470S",
+          "ghz": 2.9,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-3770S",
+          "ghz": 3.1,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "gpu_options": [
+        {
+          "gpu": "NVIDIA GeForce GT 640M",
+          "vram": "512MB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "NVIDIA GeForce GT 650M",
+          "vram": "512MB",
+          "config": "standard",
+          "notes": "2.9GHz 档"
+        }
+      ]
+    },
+    {
+      "model_name": "iMac Pro (2017)",
+      "model_identifier": "iMacPro1,1",
+      "release_year": 2017,
+      "family": "iMac Pro",
+      "cpu_model": "Intel Xeon W-2140B (3.2GHz 8核)",
+      "cpu_socket": "LGA2066",
+      "official_max_ram_gb": 256,
+      "ram_type": "DDR4-2666 ECC RDIMM (4槽, 需拆屏, 非用户可达)",
+      "ram_slots": 4,
+      "storage_interface": "proprietary-NVMe (T2 配对双刀片)",
+      "stock_storage": "SSD",
+      "nvme_bootable": "native",
+      "max_macos": "macOS Sequoia 15",
+      "apple_spec_url": "https://support.apple.com/kb/SP771",
+      "verify_marker": "iMac Pro",
+      "board_id": "Mac-7BA5B2D9E42DDD94",
+      "stock_gpu": "AMD Radeon Pro Vega 56/64",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "无显卡类 caveat",
+      "cpu_options": [
+        {
+          "cpu": "Intel Xeon W-2140B",
+          "ghz": 3.2,
+          "cores": 8,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Xeon W-2150B",
+          "ghz": 3.0,
+          "cores": 10,
+          "config": "configurable",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Xeon W-2170B",
+          "ghz": 2.5,
+          "cores": 14,
+          "config": "configurable",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Xeon W-2191B",
+          "ghz": 2.3,
+          "cores": 18,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "gpu_options": [
+        {
+          "gpu": "AMD Radeon Pro Vega 56",
+          "vram": "8GB HBM2",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "AMD Radeon Pro Vega 64",
+          "vram": "16GB HBM2",
+          "config": "configurable",
+          "notes": null
+        },
+        {
+          "gpu": "AMD Radeon Pro Vega 64X",
+          "vram": "16GB HBM2",
+          "config": "configurable",
+          "notes": "2019 追加"
+        }
+      ]
+    },
+    {
+      "model_name": "MacBook Pro (15-inch, 2016)",
+      "model_identifier": "MacBookPro13,3",
+      "release_year": 2016,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i7-6700HQ (2.6GHz 4核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 16,
+      "ram_type": "soldered LPDDR3-2133",
+      "ram_slots": 0,
+      "storage_interface": "soldered-NVMe",
+      "stock_storage": "SSD",
+      "nvme_bootable": "no",
+      "max_macos": "macOS Ventura 13",
+      "apple_spec_url": "https://support.apple.com/kb/SP749",
+      "verify_marker": "15-inch, 2016",
+      "board_id": "Mac-A5C67F76ED83108C",
+      "stock_gpu": "Radeon Pro 450/455/460 (Polaris) + Intel HD 530",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i7-6700HQ",
+          "ghz": 2.6,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-6820HQ",
+          "ghz": 2.7,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-6920HQ",
+          "ghz": 2.9,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "gpu_options": [
+        {
+          "gpu": "Intel HD 530 + Radeon Pro 450",
+          "vram": "2GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "Intel HD 530 + Radeon Pro 455",
+          "vram": "2GB",
+          "config": "standard",
+          "notes": "高配档"
+        },
+        {
+          "gpu": "Intel HD 530 + Radeon Pro 460",
+          "vram": "4GB",
+          "config": "configurable",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model_name": "MacBook Pro (15-inch, 2017)",
+      "model_identifier": "MacBookPro14,3",
+      "release_year": 2017,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i7-7700HQ (2.8GHz 4核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 16,
+      "ram_type": "soldered LPDDR3-2133",
+      "ram_slots": 0,
+      "storage_interface": "soldered-NVMe",
+      "stock_storage": "SSD",
+      "nvme_bootable": "no",
+      "max_macos": "macOS Ventura 13",
+      "apple_spec_url": "https://support.apple.com/kb/SP756",
+      "verify_marker": "15-inch, 2017",
+      "board_id": "Mac-551B86E5744E2388",
+      "stock_gpu": "Radeon Pro 555/560 (Polaris) + Intel HD 630",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i7-7700HQ",
+          "ghz": 2.8,
+          "cores": 4,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-7820HQ",
+          "ghz": 2.9,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-7920HQ",
+          "ghz": 3.1,
+          "cores": 4,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "gpu_options": [
+        {
+          "gpu": "Intel HD 630 + Radeon Pro 555",
+          "vram": "2GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "Intel HD 630 + Radeon Pro 560",
+          "vram": "4GB",
+          "config": "configurable",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "model_name": "MacBook Pro (15-inch, 2018)",
+      "model_identifier": "MacBookPro15,1",
+      "release_year": 2018,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i7-8750H (2.2GHz 6核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 32,
+      "ram_type": "soldered DDR4-2400",
+      "ram_slots": 0,
+      "storage_interface": "soldered-NVMe (T2)",
+      "stock_storage": "SSD",
+      "nvme_bootable": "no",
+      "max_macos": "macOS Sequoia 15",
+      "apple_spec_url": "https://support.apple.com/kb/SP776",
+      "verify_marker": "15-inch, 2018",
+      "board_id": "Mac-937A206F2EE63C01",
+      "stock_gpu": "Radeon Pro 555X/560X (Polaris) + Intel UHD 630",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "无显卡类 caveat",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i7-8750H",
+          "ghz": 2.2,
+          "cores": 6,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-8850H",
+          "ghz": 2.6,
+          "cores": 6,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i9-8950HK",
+          "ghz": 2.9,
+          "cores": 6,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "gpu_options": [
+        {
+          "gpu": "Intel UHD 630 + Radeon Pro 555X",
+          "vram": "4GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "Intel UHD 630 + Radeon Pro 560X",
+          "vram": "4GB",
+          "config": "standard",
+          "notes": "高配档"
+        },
+        {
+          "gpu": "Intel UHD 630 + Radeon Pro Vega 16/20",
+          "vram": "4GB HBM2",
+          "config": "configurable",
+          "notes": "2018 末追加的选配"
+        }
+      ]
+    },
+    {
+      "model_name": "MacBook Pro (16-inch, 2019)",
+      "model_identifier": "MacBookPro16,1",
+      "release_year": 2019,
+      "family": "MacBook Pro",
+      "cpu_model": "Intel Core i7-9750H (2.6GHz 6核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 64,
+      "ram_type": "soldered DDR4-2666",
+      "ram_slots": 0,
+      "storage_interface": "soldered-NVMe (T2)",
+      "stock_storage": "SSD",
+      "nvme_bootable": "no",
+      "max_macos": "macOS Tahoe 26",
+      "apple_spec_url": "https://support.apple.com/kb/SP809",
+      "verify_marker": "16-inch, 2019",
+      "board_id": "Mac-E1008331FDC96864",
+      "stock_gpu": "Radeon Pro 5300M/5500M (RDNA) + Intel UHD 630",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "无显卡类 caveat",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i7-9750H",
+          "ghz": 2.6,
+          "cores": 6,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i9-9880H",
+          "ghz": 2.3,
+          "cores": 8,
+          "config": "configurable",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i9-9980HK",
+          "ghz": 2.4,
+          "cores": 8,
+          "config": "configurable",
+          "notes": "传说中的 9980HK, 本机是它的原厂归宿"
+        }
+      ],
+      "gpu_options": [
+        {
+          "gpu": "Intel UHD 630 + Radeon Pro 5300M",
+          "vram": "4GB",
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "gpu": "Intel UHD 630 + Radeon Pro 5500M",
+          "vram": "4/8GB",
+          "config": "standard",
+          "notes": "高配档"
+        },
+        {
+          "gpu": "Intel UHD 630 + Radeon Pro 5600M",
+          "vram": "8GB HBM2",
+          "config": "configurable",
+          "notes": "2020 中追加, 移动端拉满"
+        }
+      ]
+    },
+    {
+      "model_name": "MacBook Air (11-inch, Early 2015)",
+      "model_identifier": "MacBookAir7,1",
+      "release_year": 2015,
+      "family": "MacBook Air",
+      "cpu_model": "Intel Core i5-5250U (1.6GHz 2核)",
+      "cpu_socket": "BGA (焊接)",
+      "official_max_ram_gb": 8,
+      "ram_type": "soldered LPDDR3-1600",
+      "ram_slots": 0,
+      "storage_interface": "proprietary-AHCI (PCIe)",
+      "stock_storage": "SSD",
+      "nvme_bootable": "firmware_update_required",
+      "max_macos": "macOS Monterey 12",
+      "apple_spec_url": "https://support.apple.com/kb/SP713",
+      "verify_marker": "11-inch, Early 2015",
+      "board_id": "Mac-9F18E312C5C2BF0B",
+      "stock_gpu": "Intel HD Graphics 6000",
+      "stock_gpu_metal": 1,
+      "oclp_caveat": "Legacy Metal: 新系统需 OCLP legacy Metal 补丁 (Ventura/Sonoma 起), 体验基本完好",
+      "cpu_options": [
+        {
+          "cpu": "Intel Core i5-5250U",
+          "ghz": 1.6,
+          "cores": 2,
+          "config": "standard",
+          "notes": null
+        },
+        {
+          "cpu": "Intel Core i7-5650U",
+          "ghz": 2.2,
+          "cores": 2,
+          "config": "configurable",
+          "notes": null
+        }
+      ],
+      "gpu_options": [
+        {
+          "gpu": "Intel HD Graphics 6000",
+          "vram": null,
+          "config": "standard",
+          "notes": null
+        }
+      ]
     }
   ]
 }

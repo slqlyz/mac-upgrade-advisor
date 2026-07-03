@@ -192,6 +192,102 @@
       "speed_spec": "2.8GHz 4核 (Sandy Bridge)",
       "requires_adapter": 0,
       "notes": "21.5 寸 2011 iMac 出厂顶配同款, 换装即插即用"
+    },
+    {
+      "key": "bcm94360cd",
+      "category": "wifi_bt_card",
+      "manufacturer": "Broadcom",
+      "part_model": "BCM94360CD",
+      "is_generic": 0,
+      "interface": "Apple 专有无线卡槽 (需转接板, 视机型)",
+      "capacity_gb": null,
+      "speed_spec": "802.11ac + BT 4.0",
+      "requires_adapter": 1,
+      "notes": "原生 AirDrop/Handoff/接力/手表解锁的钥匙; 至 Sequoia 免驱"
+    },
+    {
+      "key": "optical-caddy",
+      "category": "optical_bay_caddy",
+      "manufacturer": null,
+      "part_model": null,
+      "is_generic": 1,
+      "interface": "SATA 光驱位托架 (9.5/12.7mm)",
+      "capacity_gb": null,
+      "speed_spec": null,
+      "requires_adapter": 0,
+      "notes": "光驱位改装第二块 2.5\" 盘"
+    },
+    {
+      "key": "wx4150",
+      "category": "gpu",
+      "manufacturer": "AMD",
+      "part_model": "Radeon Pro WX4150",
+      "is_generic": 0,
+      "interface": "MXM 3.0-B",
+      "capacity_gb": 4,
+      "speed_spec": null,
+      "requires_adapter": 0,
+      "notes": "GCN4 (Polaris), Metal 支持好; 但 2011 iMac 部分机器不识别, 原因未解"
+    },
+    {
+      "key": "bcm94360csax",
+      "category": "wifi_bt_card",
+      "manufacturer": "Broadcom",
+      "part_model": "BCM94360CSAX",
+      "is_generic": 0,
+      "interface": "Apple 专有半高无线卡槽 (2012 Retina MBP 直插)",
+      "capacity_gb": null,
+      "speed_spec": "802.11ac + BT 4.0",
+      "requires_adapter": 0,
+      "notes": "2013 款同槽位原装件, 2012 Retina 直接换装"
+    },
+    {
+      "key": "fw-flash-51",
+      "category": "other",
+      "manufacturer": null,
+      "part_model": "5,1 固件刷写 (netkas 工具)",
+      "is_generic": 0,
+      "interface": "BootROM (软件操作, 非硬件)",
+      "capacity_gb": null,
+      "speed_spec": null,
+      "requires_adapter": 0,
+      "notes": "把 2009 款 4,1 刷成 5,1 固件: 解锁 Westmere CPU 换装、更高 macOS (至 Mojave)、NVMe 引导 (144 固件); 4,1 与 5,1 共享逻辑板 ID (Mac-F221BEC8), 这是可行性的底层原因"
+    },
+    {
+      "key": "ddr4-lrdimm-128gb",
+      "category": "ram",
+      "manufacturer": null,
+      "part_model": null,
+      "is_generic": 1,
+      "interface": "DDR4-ECC-LRDIMM",
+      "capacity_gb": 128,
+      "speed_spec": "2666MHz",
+      "requires_adapter": 0,
+      "notes": null
+    },
+    {
+      "key": "i7-3615qe",
+      "category": "cpu",
+      "manufacturer": "Intel",
+      "part_model": "Core i7-3615QE",
+      "is_generic": 0,
+      "interface": "BGA1023 (板级焊接)",
+      "capacity_gb": null,
+      "speed_spec": "2.3GHz 4核8线程 (Ivy Bridge 嵌入式)",
+      "requires_adapter": 0,
+      "notes": "与双核 M 系芯片同 BGA 封装同脚位, 是 13 寸 2012 上四核的钥匙"
+    },
+    {
+      "key": "lpddr-reball-16gb",
+      "category": "ram",
+      "manufacturer": null,
+      "part_model": "16GB 颗粒加焊 (板级)",
+      "is_generic": 0,
+      "interface": "板级 BGA 内存颗粒 (拆焊加倍)",
+      "capacity_gb": 16,
+      "speed_spec": null,
+      "requires_adapter": 0,
+      "notes": "焊接内存机型的唯一扩容路径: 拆焊原颗粒换更大容量; 深圳维修圈常规操作"
     }
   ],
   "compatibility": [
@@ -479,6 +575,184 @@
       "result": "works",
       "max_working_capacity_gb": null,
       "notes": "出厂顶配同款 (微码必然在固件内), 社区多例即插即用; 同理 12,2 可上 i7-2600"
+    },
+    {
+      "model_identifier": "iMac12,1",
+      "component_key": "bcm94360cd",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/imac-late-2007-to-mid-2011-802-11ac-bt-4-0-internal-upgrade.1780242/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://www.ifixit.com/Answers/View/162178/Wireless+Airport+Card+Replacement+with+New+802.11ac"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.10 起原生",
+      "result": "works",
+      "max_working_capacity_gb": null,
+      "notes": "需转接板套件 (2009–2011 iMac 通用帖); 换后 AirDrop/Handoff/低功耗蓝牙/手表解锁全原生; 黑苹果续命场景强烈建议同步更换"
+    },
+    {
+      "model_identifier": "iMac12,2",
+      "component_key": "bcm94360cd",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/imac-late-2007-to-mid-2011-802-11ac-bt-4-0-internal-upgrade.1780242/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://www.ifixit.com/Answers/View/162178/Wireless+Airport+Card+Replacement+with+New+802.11ac"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.10 起原生",
+      "result": "works",
+      "max_working_capacity_gb": null,
+      "notes": "需转接板套件; 换后 AirDrop/Handoff/低功耗蓝牙/手表解锁全原生; 黑苹果续命场景强烈建议同步更换"
+    },
+    {
+      "model_identifier": "MacPro5,1",
+      "component_key": "bcm94360cd",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/upgrade-my-mac-pro-5-1-wifi-and-bluetooth-4.2242683/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://lowendmac.com/2024/installing-a-broadcom-bcm94360cd-bluetooth-4-wifi-5-ieee-802-11ac/"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "10.10 起原生",
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": null,
+      "notes": "mini-PCIe 转接; 板载槽不带 USB, 蓝牙需另接 3-pin USB 线到主板; 原装蓝牙天线够不到新卡, 需延长线或外置天线 (Handoff 稳定性关键)"
+    },
+    {
+      "model_identifier": "MacBookPro9,2",
+      "component_key": "optical-caddy",
+      "confidence_level": "community_tested",
+      "source_url": "https://eshop.macsales.com/shop/internal_storage/Data_Doubler",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://everymac.com/systems/apple/macbook_pro/macbook-pro-unibody-faq/how-to-replace-optical-drive-with-ssd-hard-drive-macbook-pro-unibody.html"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": null,
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": null,
+      "notes": "经典双盘方案: SSD 放主位 + 机械盘进光驱位最稳; 光驱位 6Gbps 不稳定问题见冲突条目"
+    },
+    {
+      "model_identifier": "MacBookPro6,2",
+      "component_key": "optical-caddy",
+      "confidence_level": "community_tested",
+      "source_url": "https://eshop.macsales.com/shop/internal_storage/Data_Doubler",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://everymac.com/systems/apple/macbook_pro/macbook-pro-unibody-faq/how-to-replace-optical-drive-with-ssd-hard-drive-macbook-pro-unibody.html"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": null,
+      "result": "works",
+      "max_working_capacity_gb": null,
+      "notes": "2010 款光驱位为 SATA II (3Gbps), 放机械盘或 3G SSD 稳定"
+    },
+    {
+      "model_identifier": "iMac12,2",
+      "component_key": "wx4150",
+      "confidence_level": "experimental",
+      "source_url": "https://forums.macrumors.com/threads/2011-imac-graphics-card-upgrade.1596614/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [],
+      "corroboration_count": 1,
+      "verified_macos_versions": "10.13–15 (视识别情况)",
+      "result": "partial",
+      "max_working_capacity_gb": null,
+      "notes": "Polaris 架构驱动寿命比 Kepler 长, 但巨帖明确记载: WX4130/4150 在部分 2009–2011 iMac 上不被识别, 无法预判哪台会中招, 原因未解 — 愿赌服输"
+    },
+    {
+      "model_identifier": "MacBookPro10,1",
+      "component_key": "bcm94360csax",
+      "confidence_level": "community_tested",
+      "source_url": "https://forums.macrumors.com/threads/macbook-pro-802-11ac-upgrade.1521466/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://www.lesliewong.us/2020/10/24/macbook-pro-retina-2012-wi-fi-upgrade/",
+        "https://www.ifixit.com/Answers/View/147393/Can+I+use+its+802.11ac+AirPort+Card+on+my+RMBP+15+(mid2012)"
+      ],
+      "corroboration_count": 3,
+      "verified_macos_versions": "10.10 起原生 (帖内实测 ac 满速)",
+      "result": "works",
+      "max_working_capacity_gb": null,
+      "notes": "换 2013 款原装同槽位件 (BCM94360CS/CSAX), 直插免转接; 天线插头细小易损, 拆装小心; 换后 ac + Handoff 全原生"
+    },
+    {
+      "model_identifier": "MacPro4,1",
+      "component_key": "fw-flash-51",
+      "confidence_level": "community_tested",
+      "path_class": "unorthodox",
+      "source_url": "https://forums.macrumors.com/threads/2009-mac-pro-4-1-firmware-upgrade-to-5-1.1919709/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [
+        "https://www.ifixit.com/Answers/View/337306/EFI+and+Firmware+update+from+4,1+to+5,1+for+Sierra+Upgrade+Solved"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": "刷后官方可至 10.14 (Mojave)",
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": null,
+      "notes": "十几年验证的成熟野路子, 但刷固件本身有变砖风险 (断电即砖); 刷后双路机型换 CPU 需开盖处理 (4,1 原生 CPU 无盖设计); 刷完等同 5,1: X56xx 换装/128GB 内存/Mojave/NVMe 全解锁",
+      "unlocks_platform": "Nehalem/Westmere-EP (LGA1366)"
+    },
+    {
+      "model_identifier": "iMacPro1,1",
+      "component_key": "ddr4-lrdimm-128gb",
+      "confidence_level": "community_tested",
+      "source_url": "https://eshop.macsales.com/item/OWC/DID2627DS512/",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://macperformanceguide.com/blog/2019/20191220_1630-iMacPro-OWC-512GB.html"
+      ],
+      "corroboration_count": 2,
+      "verified_macos_versions": null,
+      "result": "works",
+      "max_working_capacity_gb": 512,
+      "notes": "官方顶配 256GB; 128GB LRDIMM 面世后 OWC 实测 4×128=512GB 完整可用 (与 Xeon W 控制器 512GB 上限吻合); 拆装需拆屏, 建议专业操作"
+    },
+    {
+      "model_identifier": "MacBookPro9,2",
+      "component_key": "i7-3615qe",
+      "confidence_level": "experimental",
+      "path_class": "unorthodox",
+      "source_url": "https://forums.macrumors.com/threads/creating-the-worlds-first-quad-core-mid-2012-13-inch-macbook-pro.2388731/",
+      "source_type": "macrumors_forum",
+      "extra_source_urls": [],
+      "corroboration_count": 1,
+      "verified_macos_versions": null,
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": null,
+      "notes": "BGA 拆焊换芯 (专业改装级, 需 BGA 返修台): 双核 i5 换四核 i7-3615QE, 同封装同脚位; MacRumors 首创帖单来源实证; 45W 四核塞进 35W 散热设计, 持续负载降频难免; 微码在固件内 (3615QM 同代)"
+    },
+    {
+      "model_identifier": "MacBookAir5,2",
+      "component_key": "i7-3615qe",
+      "confidence_level": "experimental",
+      "path_class": "unorthodox",
+      "source_url": "https://www.reddit.com/r/mac/comments/1hquwht/the_we_have_it_folks_i73615qe_4c8t_and_16gb_ram/",
+      "source_type": "reddit",
+      "extra_source_urls": [],
+      "corroboration_count": 1,
+      "verified_macos_versions": null,
+      "result": "works_with_caveats",
+      "max_working_capacity_gb": null,
+      "notes": "BGA 拆焊换芯 (dosdude1 思路, Reddit 实装帖): 原装 i5-3427U 换四核 3615QE, 恒温 145°F; OP 提示 3612QE (35W) 散热更优但价高 ($70 vs $26); 性能接近同年顶配 3820QM; 超薄机身散热限制持续负载; 整机改装成本 <$100"
+    },
+    {
+      "model_identifier": "MacBookAir5,2",
+      "component_key": "lpddr-reball-16gb",
+      "confidence_level": "experimental",
+      "path_class": "unorthodox",
+      "source_url": "https://www.reddit.com/r/mac/comments/1hquwht/the_we_have_it_folks_i73615qe_4c8t_and_16gb_ram/",
+      "source_type": "reddit",
+      "extra_source_urls": [],
+      "corroboration_count": 1,
+      "verified_macos_versions": null,
+      "result": "works",
+      "max_working_capacity_gb": 16,
+      "notes": "焊接内存加倍: 原装焊死上限 8GB, 颗粒加焊至 16GB 实装成功; 注意 OP 评论: 2010/2011 Air (A1369/A1370) 部分主板缺高容量数据线, 只能到 4GB, 此法不通用于更老款"
     }
   ],
   "known_conflicts": [
@@ -527,6 +801,21 @@
         "https://www.ifixit.com/Answers/View/702869/Do+I+need+an+OWC+thermal+sensor+if+I+want+to+swap+SSD"
       ],
       "corroboration_count": 3
+    },
+    {
+      "model_identifier": "MacBookPro9,2",
+      "component_a_key": "optical-caddy",
+      "component_b_key": null,
+      "severity": "instability",
+      "description": "2011/2012 全系 (8,x/9,1/9,2) 光驱位 SATA 通道对 6Gbps 盘不稳定 (OWC 实测): 随机卡死、掉盘、数据损坏风险",
+      "workaround": "光驱位放 3Gbps 盘 (机械盘/SATA II SSD) 或把盘固件切 3G 模式; 6G SSD 放主硬盘位",
+      "affected_macos_versions": "全版本 (硬件通道问题)",
+      "source_url": "https://eshop.macsales.com/blog/10433-macbook-pro-2011-models-and-sata-3-0-6-0gbs-update-5272011/",
+      "source_type": "other_community",
+      "extra_source_urls": [
+        "https://forums.macrumors.com/threads/new-high-end-15-macbook-pros-optical-drive-sata-port-still-only-3gbps.1255764/"
+      ],
+      "corroboration_count": 2
     }
   ]
 }

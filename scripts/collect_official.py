@@ -69,10 +69,15 @@ def upsert_model(conn, m, final_url):
     conn.execute(
         """INSERT INTO models (model_name, model_identifier, release_year, family,
                cpu_model, cpu_socket, official_max_ram_gb, ram_type, ram_slots,
-               storage_interface, stock_storage, nvme_bootable, max_macos, apple_spec_url)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+               storage_interface, stock_storage, nvme_bootable, max_macos, apple_spec_url,
+               board_id, stock_gpu, stock_gpu_metal, oclp_caveat)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
            ON CONFLICT(model_identifier) DO UPDATE SET
                stock_storage=excluded.stock_storage,
+               board_id=excluded.board_id,
+               stock_gpu=excluded.stock_gpu,
+               stock_gpu_metal=excluded.stock_gpu_metal,
+               oclp_caveat=excluded.oclp_caveat,
                model_name=excluded.model_name,
                release_year=excluded.release_year,
                family=excluded.family,
@@ -89,7 +94,9 @@ def upsert_model(conn, m, final_url):
         (m["model_name"], m["model_identifier"], m["release_year"], m["family"],
          m["cpu_model"], m.get("cpu_socket"), m["official_max_ram_gb"],
          m.get("ram_type"), m["ram_slots"], m["storage_interface"],
-         m.get("stock_storage"), m["nvme_bootable"], m.get("max_macos"), final_url),
+         m.get("stock_storage"), m["nvme_bootable"], m.get("max_macos"), final_url,
+         m.get("board_id"), m.get("stock_gpu"), m.get("stock_gpu_metal"),
+         m.get("oclp_caveat")),
     )
     mid = conn.execute(
         "SELECT id FROM models WHERE model_identifier = ?", (m["model_identifier"],)
@@ -100,6 +107,13 @@ def upsert_model(conn, m, final_url):
             """INSERT INTO cpu_options (model_id, cpu_model, ghz, cores, config_type, notes)
                VALUES (?,?,?,?,?,?)""",
             (mid, o["cpu"], o["ghz"], o["cores"], o["config"], o.get("notes")),
+        )
+    conn.execute("DELETE FROM gpu_options WHERE model_id = ?", (mid,))
+    for o in m.get("gpu_options", []):
+        conn.execute(
+            """INSERT INTO gpu_options (model_id, gpu_model, vram, config_type, notes)
+               VALUES (?,?,?,?,?)""",
+            (mid, o["gpu"], o.get("vram"), o["config"], o.get("notes")),
         )
 
 
