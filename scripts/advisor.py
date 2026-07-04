@@ -57,14 +57,20 @@ def bga_quad_swap_applicable(model, plat, cpu_options):
     依据: 双核 M/U 系与 QE 四核共用 BGA1023, 且 Apple 未删 QE 微码;
     15/17 吋的 QM 四核是 BGA1224 — 本就四核且封装不同, 不适用;
     跨代 (SNB 板上 IVB) 需 CoreBoot 换固件, 另行实证。"""
-    if not (model["cpu_socket"] or "").startswith("BGA") or not plat:
+    sock = model["cpu_socket"] or ""
+    if not sock.startswith("BGA") or not plat:
         return False
     arch = plat.get("cpu_microarch") or ""
     if not ("Sandy Bridge" in arch or "Ivy Bridge" in arch):
         return False
+    if sock.startswith("BGA1023"):
+        return True   # 精确封装命中
+    if sock.startswith("BGA1224"):
+        return False  # 四核 QM 封装, 不适用
+    # 泛型 "BGA" 兜底: 用基础款核数代理
     std = [o for o in cpu_options if o["config_type"] == "standard"]
     base = min(std, key=lambda o: (o["cores"], o["ghz"])) if std else None
-    return bool(base and base["cores"] == 2)  # 双核基础款 = BGA1023
+    return bool(base and base["cores"] == 2)
 
 
 def ram_reball_floor(model):

@@ -19,6 +19,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 import advisor
+import bootstrap
 
 DB_PATH = Path(__file__).resolve().parent.parent / "data" / "mac_upgrade.db"
 
@@ -531,7 +532,8 @@ def main():
     args = parser.parse_args()
 
     if not DB_PATH.exists():
-        raise SystemExit(f"数据库不存在, 先运行 scripts/init_db.py 和采集脚本: {DB_PATH}")
+        if not bootstrap.ensure_db():
+            raise SystemExit("数据库构建失败, 请检查 Python 环境")
 
     server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
     url = f"http://127.0.0.1:{args.port}/"

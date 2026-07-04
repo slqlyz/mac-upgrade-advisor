@@ -147,17 +147,22 @@ def main():
             print(f"  ✗ {m['model_identifier']}: 存储 {m['nvme_bootable']!r} vs 规则推导 {d!r}")
     print("  (其余一致)\n")
 
-    print("5) cpu_socket 平台内一致性:")
+    print("5) cpu_socket 平台内大类一致性 (BGA/LGA; 具体封装如 1023/1224 归机型级):")
     rows = conn.execute("""
-        SELECT p.name, GROUP_CONCAT(DISTINCT m.cpu_socket) AS sockets,
-               COUNT(DISTINCT m.cpu_socket) AS n
+        SELECT p.name,
+          GROUP_CONCAT(DISTINCT CASE WHEN m.cpu_socket LIKE 'BGA%' THEN 'BGA'
+                                     WHEN m.cpu_socket LIKE 'LGA%' THEN 'LGA'
+                                     ELSE m.cpu_socket END) AS kinds,
+          COUNT(DISTINCT CASE WHEN m.cpu_socket LIKE 'BGA%' THEN 'BGA'
+                              WHEN m.cpu_socket LIKE 'LGA%' THEN 'LGA'
+                              ELSE m.cpu_socket END) AS n
         FROM models m JOIN platforms p ON p.id = m.platform_id
         GROUP BY p.id HAVING n > 1""").fetchall()
     for r in rows:
         issues += 1
-        print(f"  ✗ 平台 {r['name']}: 混装 {r['sockets']} (不能上移平台层)")
+        print(f"  ✗ 平台 {r['name']}: 大类混装 {r['kinds']}")
     if not rows:
-        print("  全部平台内一致 (cpu_socket 可考虑上移平台层, 机型级仅存例外)")
+        print("  全部平台内大类一致 (同平台 BGA 细分不同属正常, 如 Sandy 移动含 1023/1224)")
 
     conn.close()
     print(f"\n结论: {issues} 处不一致" if issues else "\n结论: 全部对账通过")
